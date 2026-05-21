@@ -1,9 +1,8 @@
-<h1 align="center">Hi, I'm Tedd</h1>
-<h3 align="center">QA Automation Engineer & Cybersecurity Enthusiast</h3>
+# Hi, I'm Tedd 👋
 
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=rebelwithoutacause&label=Profile%20views&color=0e75b6&style=flat" alt="profile views" />
-</p>
+### QA Automation Engineer & Cybersecurity Enthusiast
+
+![Profile views](https://komarev.com/ghpvc/?username=rebelwithoutacause&label=Profile%20views&color=0e75b6&style=flat)
 
 ---
 
@@ -55,14 +54,8 @@ This GitHub is where I upload projects, testing tasks, automation work, and ever
 
 ### 📊 GitHub Stats
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=rebelwithoutacause&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true" />
-</p>
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=rebelwithoutacause&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true)
 
-<p align="center">
-  <img src="https://streak-stats.demolab.com/?user=rebelwithoutacause&theme=tokyonight&hide_border=true" />
-</p>
+![GitHub Streak](https://streak-stats.demolab.com/?user=rebelwithoutacause&theme=tokyonight&hide_border=true)
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=rebelwithoutacause&layout=compact&theme=tokyonight&hide_border=true" />
-</p>
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=rebelwithoutacause&layout=compact&theme=tokyonight&hide_border=true)
