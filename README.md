@@ -1,61 +1,20 @@
-<h1 align="center">Hi, I'm Tedd</h1>
-<h3 align="center">QA Automation Engineer & Cybersecurity Enthusiast</h3>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=Hi%2C%20I'm%20Tedd%20%F0%9F%91%8B&fontSize=50&fontAlignY=38&animation=fadeIn&fontColor=white" />
 
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=rebelwithoutacause&label=Profile%20views&color=0e75b6&style=flat" alt="profile views" />
-</p>
+# 💫 About Me:
+🔭 I'm currently working as a QA Automation Engineer;<br>🌱 I'm currently learning cybersecurity, ethical hacking, and test automation;<br>💬 Ask me about software testing, QA automation, bug hunting, and cybersecurity;<br>⚡ Fun fact: I find more bugs outside the app than inside it;
 
----
+# 💻 Tech Stack:
+![Jira](https://img.shields.io/badge/Jira-%230052CC.svg?style=flat&logo=jira&logoColor=white) ![ClickUp](https://img.shields.io/badge/ClickUp-%237B68EE.svg?style=flat&logo=clickup&logoColor=white) ![LogRocket](https://img.shields.io/badge/LogRocket-%23764ABC.svg?style=flat&logoColor=white) ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=flat&logo=postman&logoColor=white) ![Swagger](https://img.shields.io/badge/Swagger-%2385EA2D.svg?style=flat&logo=swagger&logoColor=black) ![Apache JMeter](https://img.shields.io/badge/Apache_JMeter-%23D22128.svg?style=flat&logoColor=white) ![k6](https://img.shields.io/badge/k6-%237D64FF.svg?style=flat&logo=k6&logoColor=white) ![Unit Testing](https://img.shields.io/badge/Unit_Testing-%2325A162.svg?style=flat&logoColor=white) ![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=flat&logo=c-sharp&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=flat&logo=javascript&logoColor=%23F7DF1E) ![AI Tools](https://img.shields.io/badge/AI_Tools-%23412991.svg?style=flat&logo=openai&logoColor=white) ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black) ![Nmap](https://img.shields.io/badge/Nmap-%230E83CD.svg?style=flat&logoColor=white) ![Hashcat](https://img.shields.io/badge/Hashcat-%23000000.svg?style=flat&logoColor=white) ![SQLMap](https://img.shields.io/badge/SQLMap-%23CC0000.svg?style=flat&logoColor=white) ![John the Ripper](https://img.shields.io/badge/John_the_Ripper-%23333333.svg?style=flat&logoColor=white) ![theHarvester](https://img.shields.io/badge/theHarvester-%234A90D9.svg?style=flat&logoColor=white)
 
-Hi, I'm Tedd — a QA Automation Engineer and Cybersecurity enthusiast with certifications in QA Automation Engineering and Cyber Security & Ethical Hacking. I'm passionate about software testing, automation, problem-solving, and building reliable applications.
+# 📊 GitHub Stats:
+![](https://github-readme-stats.vercel.app/api?username=rebelwithoutacause&theme=tokyonight&hide_border=false&include_all_commits=true&count_private=true)<br/>
+![](https://streak-stats.demolab.com/?user=rebelwithoutacause&theme=tokyonight&hide_border=false)<br/>
+![](https://github-readme-stats.vercel.app/api/top-langs/?username=rebelwithoutacause&theme=tokyonight&hide_border=false&include_all_commits=true&count_private=true&layout=compact)
 
-I work with manual and automated testing, unit testing, bug reporting, and QA documentation, while continuously improving my technical and analytical skills. I'm also interested in cybersecurity, ethical hacking, and exploring how systems work behind the scenes.
-
-This GitHub is where I upload projects, testing tasks, automation work, and everything related to my journey in IT.
-
----
-
-### 🧪 QA & Testing
-
-![Jira](https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=jira&logoColor=white)
-![ClickUp](https://img.shields.io/badge/ClickUp-7B68EE?style=for-the-badge&logo=clickup&logoColor=white)
-![LogRocket](https://img.shields.io/badge/LogRocket-764ABC?style=for-the-badge&logoColor=white)
-![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
-![Swagger](https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=swagger&logoColor=black)
-![JMeter](https://img.shields.io/badge/Apache_JMeter-D22128?style=for-the-badge&logoColor=white)
-![k6](https://img.shields.io/badge/k6-7D64FF?style=for-the-badge&logo=k6&logoColor=white)
-![Unit Testing](https://img.shields.io/badge/Unit_Testing-25A162?style=for-the-badge&logoColor=white)
-
-### 💻 Languages
-
-![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-
-### 🤖 AI Tools
-
-![AI Tools](https://img.shields.io/badge/AI_Tools-412991?style=for-the-badge&logo=openai&logoColor=white)
-
-### 🛡️ Cybersecurity
-
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
-![Nmap](https://img.shields.io/badge/Nmap-0E83CD?style=for-the-badge&logoColor=white)
-![Hashcat](https://img.shields.io/badge/Hashcat-000000?style=for-the-badge&logoColor=white)
-![SQLMap](https://img.shields.io/badge/SQLMap-CC0000?style=for-the-badge&logoColor=white)
-![John the Ripper](https://img.shields.io/badge/John_the_Ripper-333333?style=for-the-badge&logoColor=white)
-![theHarvester](https://img.shields.io/badge/theHarvester-4A90D9?style=for-the-badge&logoColor=white)
+### ✍️ Random Dev Quote
+![](https://quotes-github-readme.vercel.app/api?type=vertical&theme=gruvbox)
 
 ---
+[![](https://visitcount.itsvg.in/api?id=rebelwithoutacause&icon=5&color=2)](https://visitcount.itsvg.in)
 
-### 📊 GitHub Stats
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=rebelwithoutacause&show_icons=true&theme=dark&hide_border=true" />
-</p>
-
-<p align="center">
-  <img src="https://streak-stats.demolab.com/?user=rebelwithoutacause&theme=dark&hide_border=true" />
-</p>
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=rebelwithoutacause&layout=compact&theme=dark&hide_border=true" />
-</p>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer" />
