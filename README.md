@@ -54,8 +54,10 @@ This GitHub is where I upload projects, testing tasks, automation work, and ever
 
 ### 📊 GitHub Stats
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=rebelwithoutacause&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true)
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=rebelwithoutacause&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true&rank_icon=github)
 
-![GitHub Streak](https://streak-stats.demolab.com/?user=rebelwithoutacause&theme=tokyonight&hide_border=true)
+![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=rebelwithoutacause&theme=tokyonight&hide_border=true)
 
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=rebelwithoutacause&layout=compact&theme=tokyonight&hide_border=true)
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=rebelwithoutacause&layout=compact&theme=tokyonight&hide_border=true&langs_count=6)
+
+![GitHub Trophies](https://github-profile-trophy.vercel.app/?username=rebelwithoutacause&theme=tokyonight&no-frame=true&row=1)
