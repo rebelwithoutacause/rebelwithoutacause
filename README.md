@@ -54,5 +54,5 @@ This GitHub is where I upload projects, testing tasks, automation work, and ever
 ---
 
 <p align="center">
-  <img src="https://streak-stats.demolab.com?user=rebelwithoutacause&theme=tokyonight&hide_border=true" />
+  <img src="https://streak-stats.demolab.com?user=rebelwithoutacause&theme=tokyonight&hide_border=true&v=2" />
 </p>
