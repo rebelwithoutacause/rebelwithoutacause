@@ -54,5 +54,5 @@ This GitHub is where I upload projects, testing tasks, automation work, and ever
 ---
 
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=rebelwithoutacause&theme=tokyo-night&hide_border=true" />
+  <img src="https://github-readme-streak-stats-theta.vercel.app?user=rebelwithoutacause&theme=tokyonight&hide_border=true" />
 </p>
