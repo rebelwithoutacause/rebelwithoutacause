@@ -51,6 +51,8 @@ This GitHub is where I upload projects, testing tasks, automation work, and ever
 ![SQLMap](https://img.shields.io/badge/SQLMap-CC0000?style=for-the-badge&logoColor=white)
 ![John the Ripper](https://img.shields.io/badge/John_the_Ripper-333333?style=for-the-badge&logoColor=white)
 ![theHarvester](https://img.shields.io/badge/theHarvester-4A90D9?style=for-the-badge&logoColor=white)
+![BloodHound](https://img.shields.io/badge/BloodHound-A41010?style=for-the-badge&logoColor=white)
+![Nessus](https://img.shields.io/badge/Nessus-00BEF0?style=for-the-badge&logoColor=white)
 
 ---
 
