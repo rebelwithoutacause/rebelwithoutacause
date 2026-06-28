@@ -6,44 +6,39 @@
 
 ---
 
-Hi, I'm Tedd — a QA Automation Engineer and Cybersecurity enthusiast with certifications in QA Automation Engineering and Cyber Security & Ethical Hacking. I'm passionate about software quality, test automation, problem-solving, and building reliable applications. I work with manual and automated testing, unit testing, bug reporting, and QA documentation while continuously improving my technical and analytical skills. I'm also interested in cybersecurity, ethical hacking, virtualization, and understanding how systems work behind the scenes.
+## 👋 About Me
 
-This GitHub is where I upload projects, testing tasks, automation work, and everything related to my journey in IT.
+Hi, I'm Tedd — a QA Automation Engineer and Cybersecurity enthusiast with certifications in QA Automation Engineering and Cyber Security & Ethical Hacking. I'm passionate about software quality, test automation, problem-solving, and building reliable applications.
+
+I work with manual and automated testing, unit testing, API testing, bug reporting, and QA documentation. I also have a strong interest in cybersecurity, ethical hacking, virtualization, and understanding how systems work under the hood.
+
+This GitHub is where I upload projects, automation tasks, testing work, and everything related to my IT journey.
 
 ---
 
 ### 🧪 QA & Testing
 
+![Selenium](https://img.shields.io/badge/Selenium-43B02A?style=for-the-badge&logo=selenium&logoColor=white)
+![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
+![Swagger](https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=swagger&logoColor=black)
 ![Jira](https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=jira&logoColor=white)
 ![ClickUp](https://img.shields.io/badge/ClickUp-7B68EE?style=for-the-badge&logo=clickup&logoColor=white)
 ![Trello](https://img.shields.io/badge/Trello-0052CC?style=for-the-badge&logo=trello&logoColor=white)
-![Selenium](https://img.shields.io/badge/Selenium-43B02A?style=for-the-badge&logo=selenium&logoColor=white)
-![LogRocket](https://img.shields.io/badge/LogRocket-764ABC?style=for-the-badge&logoColor=white)
-![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
-![Swagger](https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=swagger&logoColor=black)
 ![Apache JMeter](https://img.shields.io/badge/Apache_JMeter-D22128?style=for-the-badge&logoColor=white)
 ![k6](https://img.shields.io/badge/k6-7D64FF?style=for-the-badge&logo=k6&logoColor=white)
-![Unit Testing](https://img.shields.io/badge/Unit_Testing-25A162?style=for-the-badge&logoColor=white)
+![LogRocket](https://img.shields.io/badge/LogRocket-764ABC?style=for-the-badge&logoColor=white)
+![Unit Testing](https://img.shields.io/badge/Unit_Testing_(C%23)-25A162?style=for-the-badge&logoColor=white)
 ![Stryker](https://img.shields.io/badge/Stryker-EE0000?style=for-the-badge&logoColor=white)
 
-### 💻 Languages
+### 💻 Programming Languages
 
 ![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![SQL](https://img.shields.io/badge/SQL-CC2927?style=for-the-badge&logoColor=white)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
-### 🖥️ Virtualization
-
-![Oracle VM VirtualBox](https://img.shields.io/badge/VirtualBox-183A61?style=for-the-badge&logo=virtualbox&logoColor=white)
-![Oracle VM](https://img.shields.io/badge/Oracle_VM-F80000?style=for-the-badge&logo=oracle&logoColor=white)
-
-### 🐧 Operating Systems
-
-![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-FCA364?style=for-the-badge&logo=linux&logoColor=black)
-
-### 🛠️ Development Tools
+### 🧰 Development & DevOps Tools
 
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
@@ -55,16 +50,16 @@ This GitHub is where I upload projects, testing tasks, automation work, and ever
 ![SQL](https://img.shields.io/badge/SQL-CC2927?style=for-the-badge&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 
-### 🤖 AI Tools
+### 🖥️ Virtualization
 
-![Claude Code](https://img.shields.io/badge/Claude_Code-CC785C?style=for-the-badge&logo=anthropic&logoColor=white)
-![Lovable](https://img.shields.io/badge/Lovable-FF4F8B?style=for-the-badge&logoColor=white)
-![Bolt.ai](https://img.shields.io/badge/Bolt.ai-FFDD00?style=for-the-badge&logoColor=black)
-![Suno.ai](https://img.shields.io/badge/Suno.ai-1A1A2E?style=for-the-badge&logoColor=white)
-![Base44](https://img.shields.io/badge/Base44-2563EB?style=for-the-badge&logoColor=white)
-![Rocket.New](https://img.shields.io/badge/Rocket.New-FF6B35?style=for-the-badge&logoColor=white)
+![Oracle VM VirtualBox](https://img.shields.io/badge/VirtualBox-183A61?style=for-the-badge&logo=virtualbox&logoColor=white)
 
-### 🛡️ Cybersecurity
+### 🐧 Operating Systems
+
+![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCA364?style=for-the-badge&logo=linux&logoColor=black)
+
+### 🛡️ Cybersecurity Tools
 
 ![Nmap](https://img.shields.io/badge/Nmap-0E83CD?style=for-the-badge&logoColor=white)
 ![Hashcat](https://img.shields.io/badge/Hashcat-000000?style=for-the-badge&logoColor=white)
@@ -73,6 +68,15 @@ This GitHub is where I upload projects, testing tasks, automation work, and ever
 ![theHarvester](https://img.shields.io/badge/theHarvester-4A90D9?style=for-the-badge&logoColor=white)
 ![BloodHound](https://img.shields.io/badge/BloodHound-A41010?style=for-the-badge&logoColor=white)
 ![Nessus](https://img.shields.io/badge/Nessus-00BEF0?style=for-the-badge&logoColor=white)
+
+### 🤖 AI Tools
+
+![Claude Code](https://img.shields.io/badge/Claude_Code-CC785C?style=for-the-badge&logo=anthropic&logoColor=white)
+![Lovable](https://img.shields.io/badge/Lovable-FF4F8B?style=for-the-badge&logoColor=white)
+![Bolt.ai](https://img.shields.io/badge/Bolt.ai-FFDD00?style=for-the-badge&logoColor=black)
+![Suno.ai](https://img.shields.io/badge/Suno.ai-1A1A2E?style=for-the-badge&logoColor=white)
+![Base44](https://img.shields.io/badge/Base44-2563EB?style=for-the-badge&logoColor=white)
+![Rocket.New](https://img.shields.io/badge/Rocket.New-FF6B35?style=for-the-badge&logoColor=white)
 
 ---
 
