@@ -36,6 +36,7 @@ This GitHub is where I upload projects, testing tasks, automation work, and ever
 ### 🖥️ Virtualization
 
 ![Oracle VM VirtualBox](https://img.shields.io/badge/VirtualBox-183A61?style=for-the-badge&logo=virtualbox&logoColor=white)
+![Oracle VM](https://img.shields.io/badge/Oracle_VM-F80000?style=for-the-badge&logo=oracle&logoColor=white)
 
 ### 🐧 Operating Systems
 
