@@ -89,10 +89,14 @@ This is where I upload my projects, automation tasks, testing work and everythin
 
 ---
 
-## 💖 Support Me
+<div align="center">
 
-If you find my work useful and want to support what I do, you can send a donation by bank transfer:
+# 💖 Support Me
 
-**IBAN:** `[IBAN removed]`
+### If you find my work useful and want to support what I do, you can send a donation by bank transfer:
 
-Thank you, every bit of support helps me keep learning, building and contributing to open source! 🙏
+## IBAN: `[IBAN removed]`
+
+### Thank you, every bit of support helps me keep learning, building and contributing to open source! 🙏
+
+</div>
