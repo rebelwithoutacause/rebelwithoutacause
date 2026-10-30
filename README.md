@@ -99,10 +99,15 @@ This is where I upload my projects, automation tasks, testing work and everythin
 
 </div>
 
+<div align="center">
+
 **IBAN:**
+
 ```text
 [IBAN removed]
 ```
+
+</div>
 
 <div align="center">
 
