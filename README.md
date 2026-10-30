@@ -101,11 +101,7 @@ This is where I upload my projects, automation tasks, testing work and everythin
 
 # `BG75STSA93000029979791`
 
-📋 Copy it from here:
-
-```text
-BG75STSA93000029979791
-```
+<a href="https://rebelwithoutacause.github.io/rebelwithoutacause/"><img src="https://img.shields.io/badge/📋_Copy_IBAN-7AA2F7?style=for-the-badge&logoColor=white" alt="Copy IBAN" height="40"></a>
 
 ### Thank you for being awesome! 🙌
 
