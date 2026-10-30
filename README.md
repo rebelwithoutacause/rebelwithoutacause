@@ -99,10 +99,15 @@ This is where I upload my projects, automation tasks, testing work and everythin
 
 </div>
 
+<div align="center">
+
 **IBAN:**
+
 ```text
 BG75STSA93000029979791
 ```
+
+</div>
 
 <div align="center">
 
