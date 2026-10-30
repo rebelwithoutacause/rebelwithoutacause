@@ -101,11 +101,7 @@ This is where I upload my projects, automation tasks, testing work and everythin
   <tr>
     <td><b>IBAN</b></td>
     <td><code>BG75STSA93000029979791</code></td>
-    <td>
-      <a href="https://rebelwithoutacause.github.io/rebelwithoutacause/">
-        <img src="https://img.shields.io/badge/📋-Copy-0969DA?style=for-the-badge" alt="Copy IBAN" height="28">
-      </a>
-    </td>
+    <td><a href="https://rebelwithoutacause.github.io/rebelwithoutacause/" title="Copy IBAN">📋</a></td>
   </tr>
 </table>
 
