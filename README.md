@@ -1,6 +1,6 @@
 # Hi, I'm Tedd 👋
 
-### QA Automation Engineer & Cybersecurity Enthusiast
+### Software Developer · QA Automation Engineer · Cybersecurity Enthusiast · Apache JMeter Contributor
 
 ![Profile views](https://komarev.com/ghpvc/?username=rebelwithoutacause&label=Profile%20views&color=0e75b6&style=flat)
 
@@ -8,11 +8,14 @@
 
 ## 👋 About Me
 
-Hi, I'm Tedd — a QA Automation Engineer and Cybersecurity enthusiast with certifications in QA Automation Engineering and Cyber Security & Ethical Hacking. I'm passionate about software quality, test automation, problem-solving, and building reliable applications.
+I'm a software developer and QA automation engineer. I hold certifications in **QA Automation Engineering** and **Cyber Security & Ethical Hacking**. I care about software quality, clean code, problem-solving and building reliable applications.
 
-I work with manual and automated testing, unit testing, API testing, bug reporting, and QA documentation. I also have a strong interest in cybersecurity, ethical hacking, virtualization, and understanding how systems work under the hood.
+- 💻 **Software development**: building applications and tools, and writing maintainable, well-tested code
+- 🧪 **Test automation & QA**: manual and automated testing, unit testing, API testing, bug reporting and QA documentation
+- 🌍 **Open source**: contributing to [Apache JMeter](https://github.com/apache/jmeter), the open-source load and performance testing tool
+- 🛡️ **Cybersecurity**: ethical hacking, virtualization and learning how systems work under the hood
 
-This GitHub is where I upload projects, automation tasks, testing work, and everything related to my IT journey.
+This is where I upload my projects, automation tasks, testing work and everything else from my IT journey.
 
 ---
 
@@ -85,3 +88,11 @@ This GitHub is where I upload projects, automation tasks, testing work, and ever
 </p>
 
 ---
+
+## 💖 Support Me
+
+If you find my work useful and want to support what I do, you can send a donation by bank transfer:
+
+**IBAN:** `BG75STSA93000029979791`
+
+Thank you, every bit of support helps me keep learning, building and contributing to open source! 🙏
