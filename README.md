@@ -91,12 +91,18 @@ This is where I upload my projects, automation tasks, testing work and everythin
 
 <div align="center">
 
-# 💖 Support Me
+# Support Me
 
-### If you find my work useful and want to support what I do, you can send a donation by bank transfer:
+### ☕ Enjoying my projects? Help fuel the next one! 🚀
 
-## IBAN: `BG75STSA93000029979791`
+### Every contribution goes straight into learning, building new tools and giving back to open source.
 
-### Thank you, every bit of support helps me keep learning, building and contributing to open source! 🙏
+## 🏦 IBAN
+
+```text
+BG75STSA93000029979791
+```
+
+### Thank you for being awesome! 🙌
 
 </div>
