@@ -2,7 +2,7 @@
 
 ### Software Developer · QA Automation Engineer · Cybersecurity Enthusiast · Apache JMeter Contributor
 
-![Profile views](https://komarev.com/ghpvc/?username=rebelwithoutacause&label=Profile%20views&color=0e75b6&style=flat) [![GitRanks Country Rank](https://img.shields.io/badge/GitRanks-Country_Rank_%F0%9F%87%A7%F0%9F%87%AC-00FF9C?style=flat&logo=hackthebox&logoColor=00FF9C&labelColor=0D1117)](https://gitranks.com/profile/rebelwithoutacause) [![rebelwithoutacause on GitRanks: gitranks Pro](https://gitranks.com/badge/user/rebelwithoutacause/tier.svg)](https://gitranks.com/profile/rebelwithoutacause)
+![Profile views](https://komarev.com/ghpvc/?username=rebelwithoutacause&label=Profile%20views&color=0e75b6&style=flat) [![GitRanks Country Rank](https://img.shields.io/badge/GitRanks-Country_Rank_%F0%9F%87%A7%F0%9F%87%AC-00FF9C?style=flat&logo=hackthebox&logoColor=00FF9C&labelColor=0D1117)](https://gitranks.com/profile/rebelwithoutacause) [![rebelwithoutacause on GitRanks: gitranks Pro](https://gitranks.com/badge/user/rebelwithoutacause/tier.svg)](https://gitranks.com/profile/rebelwithoutacause) [![GitRanks Stars Rank](https://gitranks.com/badge/user/rebelwithoutacause/rank.svg)](https://gitranks.com/profile/rebelwithoutacause)
 
 ---
 
