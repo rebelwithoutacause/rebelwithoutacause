@@ -8,14 +8,14 @@
 
 ## 👋 About Me
 
-I'm a software developer and QA automation engineer. I hold certifications in **QA Automation Engineering** and **Cyber Security & Ethical Hacking**. I care about software quality, clean code, problem-solving and building reliable applications.
+### I'm a software developer and QA automation engineer. I hold certifications in **QA Automation Engineering** and **Cyber Security & Ethical Hacking**. I care about software quality, clean code, problem-solving and building reliable applications.
 
-- 💻 **Software development**: building applications and tools, and writing maintainable, well-tested code
-- 🧪 **Test automation & QA**: manual and automated testing, unit testing, API testing, bug reporting and QA documentation
-- 🌍 **Open source**: contributing to [Apache JMeter](https://github.com/apache/jmeter), the open-source load and performance testing tool
-- 🛡️ **Cybersecurity**: ethical hacking, virtualization and learning how systems work under the hood
+- ### 💻 **Software development**: building applications and tools, and writing maintainable, well-tested code
+- ### 🧪 **Test automation & QA**: manual and automated testing, unit testing, API testing, bug reporting and QA documentation
+- ### 🌍 **Open source**: contributing to [Apache JMeter](https://github.com/apache/jmeter), the open-source load and performance testing tool
+- ### 🛡️ **Cybersecurity**: ethical hacking, virtualization and learning how systems work under the hood
 
-This is where I upload my projects, automation tasks, testing work and everything else from my IT journey.
+### This is where I upload my projects, automation tasks, testing work and everything else from my IT journey.
 
 ---
 
