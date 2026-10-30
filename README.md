@@ -99,6 +99,10 @@ This is where I upload my projects, automation tasks, testing work and everythin
 
 ## 🏦 IBAN
 
+# `[IBAN removed]`
+
+📋 Copy it from here:
+
 ```text
 [IBAN removed]
 ```
