@@ -99,13 +99,10 @@ This is where I upload my projects, automation tasks, testing work and everythin
 
 </div>
 
-<table>
-  <tr>
-    <td style="border: none; padding-right: 10px;"><b>IBAN:</b></td>
-    <td style="border: none; padding-right: 10px;"><code>[IBAN removed]</code></td>
-    <td style="border: none;"><g-emoji class="g-emoji" alias="clipboard" fallback-src="https://githubassets.com">📋</g-emoji> <sub>(Double-click to select)</sub></td>
-  </tr>
-</table>
+**IBAN:**
+```text
+[IBAN removed]
+```
 
 <div align="center">
 
