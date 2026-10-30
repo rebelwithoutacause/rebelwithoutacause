@@ -97,11 +97,17 @@ This is where I upload my projects, automation tasks, testing work and everythin
 
 ### Every contribution goes straight into learning, building new tools and giving back to open source.
 
-## 🏦 IBAN
-
-```text
-BG75STSA93000029979791
-```
+<table>
+  <tr>
+    <td><b>IBAN</b></td>
+    <td><code>BG75STSA93000029979791</code></td>
+    <td>
+      <a href="https://rebelwithoutacause.github.io/rebelwithoutacause/">
+        <img src="https://img.shields.io/badge/📋-Copy-0969DA?style=for-the-badge" alt="Copy IBAN" height="28">
+      </a>
+    </td>
+  </tr>
+</table>
 
 ### Thank you for being awesome! 🙌
 
