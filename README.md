@@ -101,7 +101,7 @@ This is where I upload my projects, automation tasks, testing work and everythin
 
 <div align="center">
 
-**IBAN:**
+### 🏦 IBAN
 
 ```text
 BG75STSA93000029979791
