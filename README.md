@@ -1,4 +1,5 @@
-# Hi, I'm Tedd 👋 [![GitRanks Country Rank](https://gitranks.com)](https://gitranks.com)
+# Hi, I'm Tedd 👋 [![GitRanks](https://shields.io)](https://gitranks.com)
+
 
 ### Software Developer · QA Automation Engineer · Cybersecurity Enthusiast · Apache JMeter Contributor
 
