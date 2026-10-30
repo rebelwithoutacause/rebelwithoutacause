@@ -99,6 +99,10 @@ This is where I upload my projects, automation tasks, testing work and everythin
 
 ## 🏦 IBAN
 
+# `BG75STSA93000029979791`
+
+📋 Copy it from here:
+
 ```text
 BG75STSA93000029979791
 ```
