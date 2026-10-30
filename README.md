@@ -97,13 +97,14 @@ This is where I upload my projects, automation tasks, testing work and everythin
 
 ### Every contribution goes straight into learning, building new tools and giving back to open source.
 
-<table>
-  <tr>
-    <td><b>IBAN</b></td>
-    <td><code>BG75STSA93000029979791</code></td>
-    <td><a href="https://rebelwithoutacause.github.io/rebelwithoutacause/" title="Copy IBAN">📋</a></td>
-  </tr>
-</table>
+</div>
+
+**IBAN:**
+```text
+BG75STSA93000029979791
+```
+
+<div align="center">
 
 ### Thank you for being awesome! 🙌
 
