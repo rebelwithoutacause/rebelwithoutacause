@@ -1,6 +1,5 @@
 # Hi, I'm Tedd 👋 [![GitRanks](https://shields.io)](https://gitranks.com)
 
-
 ### Software Developer · QA Automation Engineer · Cybersecurity Enthusiast · Apache JMeter Contributor
 
 ![Profile views](https://komarev.com/ghpvc/?username=rebelwithoutacause&label=Profile%20views&color=0e75b6&style=flat)
