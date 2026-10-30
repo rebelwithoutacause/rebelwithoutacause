@@ -1,5 +1,5 @@
-# Hi, I'm Tedd 👋 [![rebelwithoutacause on GitRanks](https://gitranks.com)](https://gitranks.com)
 
+# Hi, I'm Tedd 👋 [![GitRanks Country Rank](https://img.shields.io/badge/GitRanks-Country_Rank_%F0%9F%87%A7%F0%9F%87%AC-00FF9C?style=for-the-badge&logo=hackthebox&logoColor=00FF9C&labelColor=0D1117)](https://gitranks.com/profile/rebelwithoutacause)
 
 ### Software Developer · QA Automation Engineer · Cybersecurity Enthusiast · Apache JMeter Contributor
 
