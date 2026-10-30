@@ -1,9 +1,8 @@
-
-# Hi, I'm Tedd 👋 [![GitRanks Country Rank](https://img.shields.io/badge/GitRanks-Country_Rank_%F0%9F%87%A7%F0%9F%87%AC-00FF9C?style=for-the-badge&logo=hackthebox&logoColor=00FF9C&labelColor=0D1117)](https://gitranks.com/profile/rebelwithoutacause)
+# Hi, I'm Tedd 👋
 
 ### Software Developer · QA Automation Engineer · Cybersecurity Enthusiast · Apache JMeter Contributor
 
-![Profile views](https://komarev.com/ghpvc/?username=rebelwithoutacause&label=Profile%20views&color=0e75b6&style=flat)
+![Profile views](https://komarev.com/ghpvc/?username=rebelwithoutacause&label=Profile%20views&color=0e75b6&style=flat) [![GitRanks Country Rank](https://img.shields.io/badge/GitRanks-Country_Rank_%F0%9F%87%A7%F0%9F%87%AC-00FF9C?style=flat&logo=hackthebox&logoColor=00FF9C&labelColor=0D1117)](https://gitranks.com/profile/rebelwithoutacause)
 
 ---
 
