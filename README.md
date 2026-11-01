@@ -25,65 +25,63 @@
 
 ### 🧪 QA & Testing
 
-![Selenium](https://img.shields.io/badge/Selenium-43B02A?style=flat-square&logo=selenium&logoColor=white)
-![Postman](https://img.shields.io/badge/Postman-FF6C37?style=flat-square&logo=postman&logoColor=white)
-![Swagger](https://img.shields.io/badge/Swagger-85EA2D?style=flat-square&logo=swagger&logoColor=black)
-![Jira](https://img.shields.io/badge/Jira-0052CC?style=flat-square&logo=jira&logoColor=white)
-![ClickUp](https://img.shields.io/badge/ClickUp-7B68EE?style=flat-square&logo=clickup&logoColor=white)
-![Trello](https://img.shields.io/badge/Trello-0052CC?style=flat-square&logo=trello&logoColor=white)
-![Apache JMeter](https://img.shields.io/badge/Apache_JMeter-D22128?style=flat-square&logo=apachejmeter&logoColor=white)
-![k6](https://img.shields.io/badge/k6-7D64FF?style=flat-square&logo=k6&logoColor=white)
-![LogRocket](https://img.shields.io/badge/LogRocket-764ABC?style=flat-square&logoColor=white)
-![Unit Testing](https://img.shields.io/badge/Unit_Testing_(C%23)-25A162?style=flat-square&logoColor=white)
-![Stryker](https://img.shields.io/badge/Stryker-EE0000?style=flat-square&logoColor=white)
+<a href="https://www.selenium.dev/"><img src="assets/skills/selenium.svg" alt="Selenium" title="Selenium" width="50" height="50"></a>
+<a href="https://www.postman.com/"><img src="assets/skills/postman.svg" alt="Postman" title="Postman" width="50" height="50"></a>
+<a href="https://swagger.io/"><img src="assets/skills/swagger.svg" alt="Swagger" title="Swagger" width="50" height="50"></a>
+<a href="https://www.atlassian.com/software/jira"><img src="assets/skills/jira.svg" alt="Jira" title="Jira" width="50" height="50"></a>
+<a href="https://clickup.com/"><img src="assets/skills/clickup.svg" alt="ClickUp" title="ClickUp" width="50" height="50"></a>
+<a href="https://trello.com/"><img src="assets/skills/trello.svg" alt="Trello" title="Trello" width="50" height="50"></a>
+<a href="https://jmeter.apache.org/"><img src="assets/skills/jmeter.svg" alt="Apache JMeter" title="Apache JMeter" width="50" height="50"></a>
+<a href="https://k6.io/"><img src="assets/skills/k6.svg" alt="k6" title="k6" width="50" height="50"></a>
+<a href="https://logrocket.com/"><img src="assets/skills/logrocket.png" alt="LogRocket" title="LogRocket" width="50" height="50"></a>
+<a href="https://learn.microsoft.com/en-us/dotnet/core/testing/"><img src="assets/skills/unit-testing.svg" alt="Unit Testing (C#)" title="Unit Testing (C#)" width="50" height="50"></a>
+<a href="https://stryker-mutator.io/"><img src="assets/skills/stryker.png" alt="Stryker" title="Stryker" width="50" height="50"></a>
 
 ### 💻 Programming Languages
 
-![C#](https://img.shields.io/badge/C%23-239120?style=flat-square&logo=csharp&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![SQL](https://img.shields.io/badge/SQL-CC2927?style=flat-square&logoColor=white)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css&logoColor=white)
+<a href="https://learn.microsoft.com/en-us/dotnet/csharp/"><img src="assets/skills/csharp.svg" alt="C#" title="C#" width="50" height="50"></a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img src="assets/skills/javascript.svg" alt="JavaScript" title="JavaScript" width="50" height="50"></a>
+<a href="https://en.wikipedia.org/wiki/SQL"><img src="assets/skills/sql.svg" alt="SQL" title="SQL" width="50" height="50"></a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTML"><img src="assets/skills/html5.svg" alt="HTML5" title="HTML5" width="50" height="50"></a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS"><img src="assets/skills/css3.svg" alt="CSS3" title="CSS3" width="50" height="50"></a>
 
 ### 🧰 Development & DevOps Tools
 
-![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
+<a href="https://git-scm.com/"><img src="assets/skills/git.svg" alt="Git" title="Git" width="50" height="50"></a>
+<a href="https://github.com/#gh-light-mode-only"><img src="assets/skills/github-light.svg" alt="GitHub" title="GitHub" width="50" height="50"></a><a href="https://github.com/#gh-dark-mode-only"><img src="assets/skills/github-dark.svg" alt="GitHub" title="GitHub" width="50" height="50"></a>
+<a href="https://www.docker.com/"><img src="assets/skills/docker.svg" alt="Docker" title="Docker" width="50" height="50"></a>
+<a href="https://github.com/features/actions"><img src="assets/skills/github-actions.svg" alt="GitHub Actions" title="GitHub Actions" width="50" height="50"></a>
 
 ### 🗄️ Databases
 
-![SQL](https://img.shields.io/badge/SQL-CC2927?style=flat-square&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
+<a href="https://en.wikipedia.org/wiki/SQL"><img src="assets/skills/sql.svg" alt="SQL" title="SQL" width="50" height="50"></a>
+<a href="https://www.mysql.com/"><img src="assets/skills/mysql.svg" alt="MySQL" title="MySQL" width="50" height="50"></a>
 
 ### 🖥️ Virtualization
 
-![Oracle VM VirtualBox](https://img.shields.io/badge/VirtualBox-183A61?style=flat-square&logo=virtualbox&logoColor=white)
+<a href="https://www.virtualbox.org/"><img src="assets/skills/virtualbox.png" alt="Oracle VM VirtualBox" title="Oracle VM VirtualBox" width="50" height="50"></a>
 
 ### 🐧 Operating Systems
 
-![Windows](https://img.shields.io/badge/Windows-0078D6?style=flat-square&logo=windows&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-FCA364?style=flat-square&logo=linux&logoColor=black)
+<a href="https://www.microsoft.com/windows"><img src="assets/skills/windows.svg" alt="Windows" title="Windows" width="50" height="50"></a>
+<a href="https://www.kernel.org/"><img src="assets/skills/linux.svg" alt="Linux" title="Linux" width="50" height="50"></a>
 
 ### 🛡️ Cybersecurity Tools
 
-![Nmap](https://img.shields.io/badge/Nmap-0E83CD?style=flat-square&logoColor=white)
-![Hashcat](https://img.shields.io/badge/Hashcat-000000?style=flat-square&logo=hashcat&logoColor=white)
-![SQLMap](https://img.shields.io/badge/SQLMap-CC0000?style=flat-square&logoColor=white)
-![John the Ripper](https://img.shields.io/badge/John_the_Ripper-333333?style=flat-square&logoColor=white)
-![theHarvester](https://img.shields.io/badge/theHarvester-4A90D9?style=flat-square&logoColor=white)
-![BloodHound](https://img.shields.io/badge/BloodHound-A41010?style=flat-square&logoColor=white)
-![Nessus](https://img.shields.io/badge/Nessus-00BEF0?style=flat-square&logoColor=white)
+<a href="https://nmap.org/"><img src="assets/skills/nmap.png" alt="Nmap" title="Nmap" width="50" height="50"></a>
+<a href="https://hashcat.net/hashcat/#gh-light-mode-only"><img src="assets/skills/hashcat-light.svg" alt="Hashcat" title="Hashcat" width="50" height="50"></a><a href="https://hashcat.net/hashcat/#gh-dark-mode-only"><img src="assets/skills/hashcat-dark.svg" alt="Hashcat" title="Hashcat" width="50" height="50"></a>
+<a href="https://sqlmap.org/"><img src="assets/skills/sqlmap.png" alt="SQLMap" title="SQLMap" width="50" height="50"></a>
+<a href="https://www.openwall.com/john/"><img src="assets/skills/john-the-ripper.svg" alt="John the Ripper" title="John the Ripper" width="50" height="50"></a>
+<a href="https://github.com/laramies/theHarvester"><img src="assets/skills/theharvester.png" alt="theHarvester" title="theHarvester" width="50" height="50"></a>
+<a href="https://github.com/SpecterOps/BloodHound"><img src="assets/skills/bloodhound.svg" alt="BloodHound" title="BloodHound" width="50" height="50"></a>
+<a href="https://www.tenable.com/products/nessus"><img src="assets/skills/nessus.svg" alt="Nessus" title="Nessus" width="50" height="50"></a>
 
 ### 🤖 AI Tools
 
-![Claude Code](https://img.shields.io/badge/Claude_Code-CC785C?style=flat-square&logo=anthropic&logoColor=white)
-![Lovable](https://img.shields.io/badge/Lovable-FF4F8B?style=flat-square&logoColor=white)
-![Bolt.ai](https://img.shields.io/badge/Bolt.ai-FFDD00?style=flat-square&logoColor=black)
-![Suno.ai](https://img.shields.io/badge/Suno.ai-1A1A2E?style=flat-square&logo=suno&logoColor=white)
-![Base44](https://img.shields.io/badge/Base44-2563EB?style=flat-square&logoColor=white)
-![Rocket.New](https://img.shields.io/badge/Rocket.New-FF6B35?style=flat-square&logoColor=white)
+<a href="https://www.anthropic.com/claude-code"><img src="assets/skills/claude.svg" alt="Claude Code" title="Claude Code" width="50" height="50"></a>
+<a href="https://lovable.dev/"><img src="assets/skills/lovable.svg" alt="Lovable" title="Lovable" width="50" height="50"></a>
+<a href="https://bolt.new"><img src="assets/skills/bolt.svg" alt="Bolt.new" title="Bolt.new" width="50" height="50"></a>
+<a href="https://suno.com/#gh-light-mode-only"><img src="assets/skills/suno-light.svg" alt="Suno.ai" title="Suno.ai" width="50" height="50"></a><a href="https://suno.com/#gh-dark-mode-only"><img src="assets/skills/suno-dark.svg" alt="Suno.ai" title="Suno.ai" width="50" height="50"></a>
 
 ---
 
