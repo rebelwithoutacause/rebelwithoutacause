@@ -15,8 +15,8 @@
 //
 // Visual identity taken from https://lonecoder.nsh.one/ (style.css): background #0a0e14,
 // raised surfaces #0f1520 / #131a26, text #e8edf4, muted #8b97a8, teal accent #2dd4bf,
-// 1px rgba(255,255,255,.08) borders, a 28px dot grid, Consolas monospace and the
-// "<Lone Coder />" brand; the striped retro sun and "> CODE. > DEBUG. ..." come from the logo.
+// 1px rgba(255,255,255,.08) borders, a 28px dot grid and Consolas monospace; the striped
+// retro sun and "> CODE. > DEBUG. ..." come from the logo.
 const fs = require('fs');
 const path = require('path');
 
@@ -126,18 +126,11 @@ ${css.join('\n')}
 </g>
 <rect x=".5" y=".5" width="${W - 1}" height="${H - 1}" rx="${R}" fill="none" stroke="#fff" stroke-opacity=".10"/>
 <g font-family="${MONO}">
-  <text x="32" y="33" font-size="18" font-weight="700" fill="${C.text}">&lt;Lone <tspan fill="${C.accent}">Coder</tspan> /&gt;</text>
-  <g transform="translate(${W - 32} 0)">
-    <rect x="-128" y="13" width="128" height="27" rx="6" fill="${C.accent}" fill-opacity=".06" stroke="${C.accent}" stroke-opacity=".3"/>
-    <circle cx="-110" cy="26.5" r="4" fill="${C.accent}" filter="url(#glow)"/>
-    <text x="-96" y="31.5" font-size="14" fill="${C.accent}">Available</text>
-  </g>
   <text x="${X0}" y="110" font-size="17" fill="${C.dim}"><tspan fill="${C.accent}">rebelwithoutacause@github</tspan>:~$ ./intro.sh</text>
   <text x="${X0}" y="${BASE}" font-size="${FS}" font-weight="700" fill="${C.accent}">&gt;</text>
   <g font-size="${FS}" font-weight="700" fill="${C.text}">${charSvg}</g>
   <g class="cur"><rect class="blink" x="${(cursorX + 2).toFixed(1)}" y="${BASE - FS * 0.78}" width="${(ADV - 4).toFixed(1)}" height="${(FS * 0.92).toFixed(1)}" rx="2" fill="${C.accent}" fill-opacity=".9" filter="url(#glow)"/></g>
   <text x="${X0}" y="228" font-size="15" fill="${C.dim}" fill-opacity=".85"><tspan fill="${C.accent}">&gt;</tspan> CODE.  <tspan fill="${C.accent}">&gt;</tspan> DEBUG.  <tspan fill="${C.accent}">&gt;</tspan> COFFEE.  <tspan fill="${C.accent}">&gt;</tspan> REPEAT.</text>
-  <text x="${X0}" y="274" font-size="14" fill="${C.dim}">github.com/rebelwithoutacause  <tspan fill="${C.accent}">·</tspan>  lonecoder.nsh.one</text>
 </g>
 </svg>
 `;
