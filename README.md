@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=Hi%2C%20I%27m%20Tedd&fontSize=60&fontAlignY=35&animation=twinkling" alt="Hi, I'm Tedd" width="100%" />
+</p>
+
 # Hi, I'm Tedd 👋
 
 ### Software Developer · QA Automation Engineer · Cybersecurity Enthusiast · Apache JMeter Contributor
@@ -85,14 +89,6 @@
 
 <p align="center">
   <img src="https://github-readme-streak-stats-theta.vercel.app?user=rebelwithoutacause&theme=tokyonight&hide_border=true" />
-</p>
-
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/rebelwithoutacause/rebelwithoutacause/output/commit-invaders-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/rebelwithoutacause/rebelwithoutacause/output/commit-invaders.svg" />
-    <img alt="Commit Invaders contribution graph" src="https://raw.githubusercontent.com/rebelwithoutacause/rebelwithoutacause/output/commit-invaders.svg" />
-  </picture>
 </p>
 
 ---
