@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300" role="img" aria-labelledby="t d">
+<title id="t">Tedd — Software Developer, QA Automation Engineer, Cybersecurity Enthusiast, Apache JMeter Contributor</title>
+<desc id="d">A retro terminal window that types five lines in turn: “I'm Tedd”, “Software Developer”, “QA Automation Engineer”, “Cybersecurity Enthusiast”, “Apache JMeter Contributor”.</desc>
+<style>
+.c{opacity:0;animation-duration:22494ms;animation-timing-function:steps(1,end);animation-iteration-count:infinite}
+.k0{animation-name:k0}@keyframes k0{0%{opacity:0}2.223%{opacity:1}17.267%{opacity:0}100%{opacity:0}}
+.k1{animation-name:k1}@keyframes k1{0%{opacity:0}2.534%{opacity:1}17.125%{opacity:0}100%{opacity:0}}
+.k2{animation-name:k2}@keyframes k2{0%{opacity:0}2.845%{opacity:1}16.982%{opacity:0}100%{opacity:0}}
+.k3{animation-name:k3}@keyframes k3{0%{opacity:0}3.156%{opacity:1}16.840%{opacity:0}100%{opacity:0}}
+.k4{animation-name:k4}@keyframes k4{0%{opacity:0}3.468%{opacity:1}16.698%{opacity:0}100%{opacity:0}}
+.k5{animation-name:k5}@keyframes k5{0%{opacity:0}3.779%{opacity:1}16.556%{opacity:0}100%{opacity:0}}
+.k6{animation-name:k6}@keyframes k6{0%{opacity:0}4.090%{opacity:1}16.413%{opacity:0}100%{opacity:0}}
+.k7{animation-name:k7}@keyframes k7{0%{opacity:0}4.401%{opacity:1}16.271%{opacity:0}100%{opacity:0}}
+.k8{animation-name:k8}@keyframes k8{0%{opacity:0}19.098%{opacity:1}35.565%{opacity:0}100%{opacity:0}}
+.k9{animation-name:k9}@keyframes k9{0%{opacity:0}19.410%{opacity:1}35.423%{opacity:0}100%{opacity:0}}
+.k10{animation-name:k10}@keyframes k10{0%{opacity:0}19.721%{opacity:1}35.281%{opacity:0}100%{opacity:0}}
+.k11{animation-name:k11}@keyframes k11{0%{opacity:0}20.032%{opacity:1}35.138%{opacity:0}100%{opacity:0}}
+.k12{animation-name:k12}@keyframes k12{0%{opacity:0}20.343%{opacity:1}34.996%{opacity:0}100%{opacity:0}}
+.k13{animation-name:k13}@keyframes k13{0%{opacity:0}20.654%{opacity:1}34.854%{opacity:0}100%{opacity:0}}
+.k14{animation-name:k14}@keyframes k14{0%{opacity:0}20.966%{opacity:1}34.711%{opacity:0}100%{opacity:0}}
+.k15{animation-name:k15}@keyframes k15{0%{opacity:0}21.277%{opacity:1}34.569%{opacity:0}100%{opacity:0}}
+.k16{animation-name:k16}@keyframes k16{0%{opacity:0}21.588%{opacity:1}34.427%{opacity:0}100%{opacity:0}}
+.k17{animation-name:k17}@keyframes k17{0%{opacity:0}21.899%{opacity:1}34.285%{opacity:0}100%{opacity:0}}
+.k18{animation-name:k18}@keyframes k18{0%{opacity:0}22.210%{opacity:1}34.142%{opacity:0}100%{opacity:0}}
+.k19{animation-name:k19}@keyframes k19{0%{opacity:0}22.522%{opacity:1}34.000%{opacity:0}100%{opacity:0}}
+.k20{animation-name:k20}@keyframes k20{0%{opacity:0}22.833%{opacity:1}33.858%{opacity:0}100%{opacity:0}}
+.k21{animation-name:k21}@keyframes k21{0%{opacity:0}23.144%{opacity:1}33.716%{opacity:0}100%{opacity:0}}
+.k22{animation-name:k22}@keyframes k22{0%{opacity:0}23.455%{opacity:1}33.573%{opacity:0}100%{opacity:0}}
+.k23{animation-name:k23}@keyframes k23{0%{opacity:0}23.766%{opacity:1}33.431%{opacity:0}100%{opacity:0}}
+.k24{animation-name:k24}@keyframes k24{0%{opacity:0}24.078%{opacity:1}33.289%{opacity:0}100%{opacity:0}}
+.k25{animation-name:k25}@keyframes k25{0%{opacity:0}24.389%{opacity:1}33.147%{opacity:0}100%{opacity:0}}
+.k26{animation-name:k26}@keyframes k26{0%{opacity:0}37.397%{opacity:1}55.677%{opacity:0}100%{opacity:0}}
+.k27{animation-name:k27}@keyframes k27{0%{opacity:0}37.708%{opacity:1}55.535%{opacity:0}100%{opacity:0}}
+.k28{animation-name:k28}@keyframes k28{0%{opacity:0}38.019%{opacity:1}55.393%{opacity:0}100%{opacity:0}}
+.k29{animation-name:k29}@keyframes k29{0%{opacity:0}38.330%{opacity:1}55.250%{opacity:0}100%{opacity:0}}
+.k30{animation-name:k30}@keyframes k30{0%{opacity:0}38.641%{opacity:1}55.108%{opacity:0}100%{opacity:0}}
+.k31{animation-name:k31}@keyframes k31{0%{opacity:0}38.953%{opacity:1}54.966%{opacity:0}100%{opacity:0}}
+.k32{animation-name:k32}@keyframes k32{0%{opacity:0}39.264%{opacity:1}54.824%{opacity:0}100%{opacity:0}}
+.k33{animation-name:k33}@keyframes k33{0%{opacity:0}39.575%{opacity:1}54.681%{opacity:0}100%{opacity:0}}
+.k34{animation-name:k34}@keyframes k34{0%{opacity:0}39.886%{opacity:1}54.539%{opacity:0}100%{opacity:0}}
+.k35{animation-name:k35}@keyframes k35{0%{opacity:0}40.197%{opacity:1}54.397%{opacity:0}100%{opacity:0}}
+.k36{animation-name:k36}@keyframes k36{0%{opacity:0}40.509%{opacity:1}54.254%{opacity:0}100%{opacity:0}}
+.k37{animation-name:k37}@keyframes k37{0%{opacity:0}40.820%{opacity:1}54.112%{opacity:0}100%{opacity:0}}
+.k38{animation-name:k38}@keyframes k38{0%{opacity:0}41.131%{opacity:1}53.970%{opacity:0}100%{opacity:0}}
+.k39{animation-name:k39}@keyframes k39{0%{opacity:0}41.442%{opacity:1}53.828%{opacity:0}100%{opacity:0}}
+.k40{animation-name:k40}@keyframes k40{0%{opacity:0}41.753%{opacity:1}53.685%{opacity:0}100%{opacity:0}}
+.k41{animation-name:k41}@keyframes k41{0%{opacity:0}42.065%{opacity:1}53.543%{opacity:0}100%{opacity:0}}
+.k42{animation-name:k42}@keyframes k42{0%{opacity:0}42.376%{opacity:1}53.401%{opacity:0}100%{opacity:0}}
+.k43{animation-name:k43}@keyframes k43{0%{opacity:0}42.687%{opacity:1}53.259%{opacity:0}100%{opacity:0}}
+.k44{animation-name:k44}@keyframes k44{0%{opacity:0}42.998%{opacity:1}53.116%{opacity:0}100%{opacity:0}}
+.k45{animation-name:k45}@keyframes k45{0%{opacity:0}43.309%{opacity:1}52.974%{opacity:0}100%{opacity:0}}
+.k46{animation-name:k46}@keyframes k46{0%{opacity:0}43.621%{opacity:1}52.832%{opacity:0}100%{opacity:0}}
+.k47{animation-name:k47}@keyframes k47{0%{opacity:0}43.932%{opacity:1}52.690%{opacity:0}100%{opacity:0}}
+.k48{animation-name:k48}@keyframes k48{0%{opacity:0}57.509%{opacity:1}76.696%{opacity:0}100%{opacity:0}}
+.k49{animation-name:k49}@keyframes k49{0%{opacity:0}57.820%{opacity:1}76.554%{opacity:0}100%{opacity:0}}
+.k50{animation-name:k50}@keyframes k50{0%{opacity:0}58.131%{opacity:1}76.411%{opacity:0}100%{opacity:0}}
+.k51{animation-name:k51}@keyframes k51{0%{opacity:0}58.442%{opacity:1}76.269%{opacity:0}100%{opacity:0}}
+.k52{animation-name:k52}@keyframes k52{0%{opacity:0}58.753%{opacity:1}76.127%{opacity:0}100%{opacity:0}}
+.k53{animation-name:k53}@keyframes k53{0%{opacity:0}59.065%{opacity:1}75.985%{opacity:0}100%{opacity:0}}
+.k54{animation-name:k54}@keyframes k54{0%{opacity:0}59.376%{opacity:1}75.842%{opacity:0}100%{opacity:0}}
+.k55{animation-name:k55}@keyframes k55{0%{opacity:0}59.687%{opacity:1}75.700%{opacity:0}100%{opacity:0}}
+.k56{animation-name:k56}@keyframes k56{0%{opacity:0}59.998%{opacity:1}75.558%{opacity:0}100%{opacity:0}}
+.k57{animation-name:k57}@keyframes k57{0%{opacity:0}60.309%{opacity:1}75.416%{opacity:0}100%{opacity:0}}
+.k58{animation-name:k58}@keyframes k58{0%{opacity:0}60.621%{opacity:1}75.273%{opacity:0}100%{opacity:0}}
+.k59{animation-name:k59}@keyframes k59{0%{opacity:0}60.932%{opacity:1}75.131%{opacity:0}100%{opacity:0}}
+.k60{animation-name:k60}@keyframes k60{0%{opacity:0}61.243%{opacity:1}74.989%{opacity:0}100%{opacity:0}}
+.k61{animation-name:k61}@keyframes k61{0%{opacity:0}61.554%{opacity:1}74.847%{opacity:0}100%{opacity:0}}
+.k62{animation-name:k62}@keyframes k62{0%{opacity:0}61.865%{opacity:1}74.704%{opacity:0}100%{opacity:0}}
+.k63{animation-name:k63}@keyframes k63{0%{opacity:0}62.177%{opacity:1}74.562%{opacity:0}100%{opacity:0}}
+.k64{animation-name:k64}@keyframes k64{0%{opacity:0}62.488%{opacity:1}74.420%{opacity:0}100%{opacity:0}}
+.k65{animation-name:k65}@keyframes k65{0%{opacity:0}62.799%{opacity:1}74.278%{opacity:0}100%{opacity:0}}
+.k66{animation-name:k66}@keyframes k66{0%{opacity:0}63.110%{opacity:1}74.135%{opacity:0}100%{opacity:0}}
+.k67{animation-name:k67}@keyframes k67{0%{opacity:0}63.421%{opacity:1}73.993%{opacity:0}100%{opacity:0}}
+.k68{animation-name:k68}@keyframes k68{0%{opacity:0}63.733%{opacity:1}73.851%{opacity:0}100%{opacity:0}}
+.k69{animation-name:k69}@keyframes k69{0%{opacity:0}64.044%{opacity:1}73.709%{opacity:0}100%{opacity:0}}
+.k70{animation-name:k70}@keyframes k70{0%{opacity:0}64.355%{opacity:1}73.566%{opacity:0}100%{opacity:0}}
+.k71{animation-name:k71}@keyframes k71{0%{opacity:0}64.666%{opacity:1}73.424%{opacity:0}100%{opacity:0}}
+.k72{animation-name:k72}@keyframes k72{0%{opacity:0}78.528%{opacity:1}98.168%{opacity:0}100%{opacity:0}}
+.k73{animation-name:k73}@keyframes k73{0%{opacity:0}78.839%{opacity:1}98.026%{opacity:0}100%{opacity:0}}
+.k74{animation-name:k74}@keyframes k74{0%{opacity:0}79.150%{opacity:1}97.884%{opacity:0}100%{opacity:0}}
+.k75{animation-name:k75}@keyframes k75{0%{opacity:0}79.461%{opacity:1}97.742%{opacity:0}100%{opacity:0}}
+.k76{animation-name:k76}@keyframes k76{0%{opacity:0}79.772%{opacity:1}97.599%{opacity:0}100%{opacity:0}}
+.k77{animation-name:k77}@keyframes k77{0%{opacity:0}80.084%{opacity:1}97.457%{opacity:0}100%{opacity:0}}
+.k78{animation-name:k78}@keyframes k78{0%{opacity:0}80.395%{opacity:1}97.315%{opacity:0}100%{opacity:0}}
+.k79{animation-name:k79}@keyframes k79{0%{opacity:0}80.706%{opacity:1}97.173%{opacity:0}100%{opacity:0}}
+.k80{animation-name:k80}@keyframes k80{0%{opacity:0}81.017%{opacity:1}97.030%{opacity:0}100%{opacity:0}}
+.k81{animation-name:k81}@keyframes k81{0%{opacity:0}81.328%{opacity:1}96.888%{opacity:0}100%{opacity:0}}
+.k82{animation-name:k82}@keyframes k82{0%{opacity:0}81.640%{opacity:1}96.746%{opacity:0}100%{opacity:0}}
+.k83{animation-name:k83}@keyframes k83{0%{opacity:0}81.951%{opacity:1}96.604%{opacity:0}100%{opacity:0}}
+.k84{animation-name:k84}@keyframes k84{0%{opacity:0}82.262%{opacity:1}96.461%{opacity:0}100%{opacity:0}}
+.k85{animation-name:k85}@keyframes k85{0%{opacity:0}82.573%{opacity:1}96.319%{opacity:0}100%{opacity:0}}
+.k86{animation-name:k86}@keyframes k86{0%{opacity:0}82.884%{opacity:1}96.177%{opacity:0}100%{opacity:0}}
+.k87{animation-name:k87}@keyframes k87{0%{opacity:0}83.196%{opacity:1}96.034%{opacity:0}100%{opacity:0}}
+.k88{animation-name:k88}@keyframes k88{0%{opacity:0}83.507%{opacity:1}95.892%{opacity:0}100%{opacity:0}}
+.k89{animation-name:k89}@keyframes k89{0%{opacity:0}83.818%{opacity:1}95.750%{opacity:0}100%{opacity:0}}
+.k90{animation-name:k90}@keyframes k90{0%{opacity:0}84.129%{opacity:1}95.608%{opacity:0}100%{opacity:0}}
+.k91{animation-name:k91}@keyframes k91{0%{opacity:0}84.440%{opacity:1}95.465%{opacity:0}100%{opacity:0}}
+.k92{animation-name:k92}@keyframes k92{0%{opacity:0}84.751%{opacity:1}95.323%{opacity:0}100%{opacity:0}}
+.k93{animation-name:k93}@keyframes k93{0%{opacity:0}85.063%{opacity:1}95.181%{opacity:0}100%{opacity:0}}
+.k94{animation-name:k94}@keyframes k94{0%{opacity:0}85.374%{opacity:1}95.039%{opacity:0}100%{opacity:0}}
+.k95{animation-name:k95}@keyframes k95{0%{opacity:0}85.685%{opacity:1}94.896%{opacity:0}100%{opacity:0}}
+.k96{animation-name:k96}@keyframes k96{0%{opacity:0}85.996%{opacity:1}94.754%{opacity:0}100%{opacity:0}}
+.cur{transform:translateX(0);animation:cur 22494ms steps(1,end) infinite}
+@keyframes cur{0.000%{transform:translateX(0.0px)}2.534%{transform:translateX(27.6px)}2.845%{transform:translateX(55.2px)}3.156%{transform:translateX(82.8px)}3.468%{transform:translateX(110.4px)}3.779%{transform:translateX(138.0px)}4.090%{transform:translateX(165.6px)}4.401%{transform:translateX(193.2px)}4.712%{transform:translateX(220.8px)}16.413%{transform:translateX(193.2px)}16.556%{transform:translateX(165.6px)}16.698%{transform:translateX(138.0px)}16.840%{transform:translateX(110.4px)}16.982%{transform:translateX(82.8px)}17.125%{transform:translateX(55.2px)}17.267%{transform:translateX(27.6px)}17.409%{transform:translateX(0.0px)}19.410%{transform:translateX(27.6px)}19.721%{transform:translateX(55.2px)}20.032%{transform:translateX(82.8px)}20.343%{transform:translateX(110.4px)}20.654%{transform:translateX(138.0px)}20.966%{transform:translateX(165.6px)}21.277%{transform:translateX(193.2px)}21.588%{transform:translateX(220.8px)}21.899%{transform:translateX(248.4px)}22.210%{transform:translateX(276.0px)}22.522%{transform:translateX(303.6px)}22.833%{transform:translateX(331.2px)}23.144%{transform:translateX(358.8px)}23.455%{transform:translateX(386.4px)}23.766%{transform:translateX(414.0px)}24.078%{transform:translateX(441.6px)}24.389%{transform:translateX(469.2px)}24.700%{transform:translateX(496.8px)}33.289%{transform:translateX(469.2px)}33.431%{transform:translateX(441.6px)}33.573%{transform:translateX(414.0px)}33.716%{transform:translateX(386.4px)}33.858%{transform:translateX(358.8px)}34.000%{transform:translateX(331.2px)}34.142%{transform:translateX(303.6px)}34.285%{transform:translateX(276.0px)}34.427%{transform:translateX(248.4px)}34.569%{transform:translateX(220.8px)}34.711%{transform:translateX(193.2px)}34.854%{transform:translateX(165.6px)}34.996%{transform:translateX(138.0px)}35.138%{transform:translateX(110.4px)}35.281%{transform:translateX(82.8px)}35.423%{transform:translateX(55.2px)}35.565%{transform:translateX(27.6px)}35.707%{transform:translateX(0.0px)}37.708%{transform:translateX(27.6px)}38.019%{transform:translateX(55.2px)}38.330%{transform:translateX(82.8px)}38.641%{transform:translateX(110.4px)}38.953%{transform:translateX(138.0px)}39.264%{transform:translateX(165.6px)}39.575%{transform:translateX(193.2px)}39.886%{transform:translateX(220.8px)}40.197%{transform:translateX(248.4px)}40.509%{transform:translateX(276.0px)}40.820%{transform:translateX(303.6px)}41.131%{transform:translateX(331.2px)}41.442%{transform:translateX(358.8px)}41.753%{transform:translateX(386.4px)}42.065%{transform:translateX(414.0px)}42.376%{transform:translateX(441.6px)}42.687%{transform:translateX(469.2px)}42.998%{transform:translateX(496.8px)}43.309%{transform:translateX(524.4px)}43.621%{transform:translateX(552.0px)}43.932%{transform:translateX(579.6px)}44.243%{transform:translateX(607.2px)}52.832%{transform:translateX(579.6px)}52.974%{transform:translateX(552.0px)}53.116%{transform:translateX(524.4px)}53.259%{transform:translateX(496.8px)}53.401%{transform:translateX(469.2px)}53.543%{transform:translateX(441.6px)}53.685%{transform:translateX(414.0px)}53.828%{transform:translateX(386.4px)}53.970%{transform:translateX(358.8px)}54.112%{transform:translateX(331.2px)}54.254%{transform:translateX(303.6px)}54.397%{transform:translateX(276.0px)}54.539%{transform:translateX(248.4px)}54.681%{transform:translateX(220.8px)}54.824%{transform:translateX(193.2px)}54.966%{transform:translateX(165.6px)}55.108%{transform:translateX(138.0px)}55.250%{transform:translateX(110.4px)}55.393%{transform:translateX(82.8px)}55.535%{transform:translateX(55.2px)}55.677%{transform:translateX(27.6px)}55.819%{transform:translateX(0.0px)}57.820%{transform:translateX(27.6px)}58.131%{transform:translateX(55.2px)}58.442%{transform:translateX(82.8px)}58.753%{transform:translateX(110.4px)}59.065%{transform:translateX(138.0px)}59.376%{transform:translateX(165.6px)}59.687%{transform:translateX(193.2px)}59.998%{transform:translateX(220.8px)}60.309%{transform:translateX(248.4px)}60.621%{transform:translateX(276.0px)}60.932%{transform:translateX(303.6px)}61.243%{transform:translateX(331.2px)}61.554%{transform:translateX(358.8px)}61.865%{transform:translateX(386.4px)}62.177%{transform:translateX(414.0px)}62.488%{transform:translateX(441.6px)}62.799%{transform:translateX(469.2px)}63.110%{transform:translateX(496.8px)}63.421%{transform:translateX(524.4px)}63.733%{transform:translateX(552.0px)}64.044%{transform:translateX(579.6px)}64.355%{transform:translateX(607.2px)}64.666%{transform:translateX(634.8px)}64.977%{transform:translateX(662.4px)}73.566%{transform:translateX(634.8px)}73.709%{transform:translateX(607.2px)}73.851%{transform:translateX(579.6px)}73.993%{transform:translateX(552.0px)}74.135%{transform:translateX(524.4px)}74.278%{transform:translateX(496.8px)}74.420%{transform:translateX(469.2px)}74.562%{transform:translateX(441.6px)}74.704%{transform:translateX(414.0px)}74.847%{transform:translateX(386.4px)}74.989%{transform:translateX(358.8px)}75.131%{transform:translateX(331.2px)}75.273%{transform:translateX(303.6px)}75.416%{transform:translateX(276.0px)}75.558%{transform:translateX(248.4px)}75.700%{transform:translateX(220.8px)}75.842%{transform:translateX(193.2px)}75.985%{transform:translateX(165.6px)}76.127%{transform:translateX(138.0px)}76.269%{transform:translateX(110.4px)}76.411%{transform:translateX(82.8px)}76.554%{transform:translateX(55.2px)}76.696%{transform:translateX(27.6px)}76.838%{transform:translateX(0.0px)}78.839%{transform:translateX(27.6px)}79.150%{transform:translateX(55.2px)}79.461%{transform:translateX(82.8px)}79.772%{transform:translateX(110.4px)}80.084%{transform:translateX(138.0px)}80.395%{transform:translateX(165.6px)}80.706%{transform:translateX(193.2px)}81.017%{transform:translateX(220.8px)}81.328%{transform:translateX(248.4px)}81.640%{transform:translateX(276.0px)}81.951%{transform:translateX(303.6px)}82.262%{transform:translateX(331.2px)}82.573%{transform:translateX(358.8px)}82.884%{transform:translateX(386.4px)}83.196%{transform:translateX(414.0px)}83.507%{transform:translateX(441.6px)}83.818%{transform:translateX(469.2px)}84.129%{transform:translateX(496.8px)}84.440%{transform:translateX(524.4px)}84.751%{transform:translateX(552.0px)}85.063%{transform:translateX(579.6px)}85.374%{transform:translateX(607.2px)}85.685%{transform:translateX(634.8px)}85.996%{transform:translateX(662.4px)}86.307%{transform:translateX(690.0px)}94.896%{transform:translateX(662.4px)}95.039%{transform:translateX(634.8px)}95.181%{transform:translateX(607.2px)}95.323%{transform:translateX(579.6px)}95.465%{transform:translateX(552.0px)}95.608%{transform:translateX(524.4px)}95.750%{transform:translateX(496.8px)}95.892%{transform:translateX(469.2px)}96.034%{transform:translateX(441.6px)}96.177%{transform:translateX(414.0px)}96.319%{transform:translateX(386.4px)}96.461%{transform:translateX(358.8px)}96.604%{transform:translateX(331.2px)}96.746%{transform:translateX(303.6px)}96.888%{transform:translateX(276.0px)}97.030%{transform:translateX(248.4px)}97.173%{transform:translateX(220.8px)}97.315%{transform:translateX(193.2px)}97.457%{transform:translateX(165.6px)}97.599%{transform:translateX(138.0px)}97.742%{transform:translateX(110.4px)}97.884%{transform:translateX(82.8px)}98.026%{transform:translateX(55.2px)}98.168%{transform:translateX(27.6px)}98.311%{transform:translateX(0.0px)}}
+.blink{animation:blink 1.06s steps(1,end) infinite}
+@keyframes blink{50%{opacity:0}}
+@media (prefers-reduced-motion:reduce){
+  .c,.cur,.blink{animation:none}
+  .m0{opacity:1}
+  .cur{transform:translateX(220.8px)}
+}
+</style>
+<defs>
+  <clipPath id="card"><rect width="1200" height="300" rx="16"/></clipPath>
+  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0f1520"/><stop offset="1" stop-color="#0a0e14"/></linearGradient>
+  <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#fff" fill-opacity=".05"/></pattern>
+  <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2dd4bf" stop-opacity=".42"/><stop offset="1" stop-color="#2dd4bf" stop-opacity=".05"/></linearGradient>
+  <clipPath id="sunClip"><circle cx="1012" cy="196" r="118"/></clipPath>
+  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<g clip-path="url(#card)">
+  <rect width="1200" height="300" fill="url(#bg)"/>
+  <rect width="1200" height="300" fill="url(#dots)"/>
+  <g clip-path="url(#sunClip)" fill="url(#sun)"><rect x="894" y="78.0" width="236" height="26.0"/><rect x="894" y="104.0" width="236" height="26.0"/><rect x="894" y="130.0" width="236" height="26.0"/><rect x="894" y="156.0" width="236" height="11.0"/><rect x="894" y="169.0" width="236" height="10.2"/><rect x="894" y="182.8" width="236" height="9.4"/><rect x="894" y="197.4" width="236" height="8.6"/><rect x="894" y="212.8" width="236" height="7.8"/><rect x="894" y="229.0" width="236" height="7.0"/><rect x="894" y="246.0" width="236" height="6.2"/><rect x="894" y="263.8" width="236" height="5.4"/></g>
+  <rect x="854" y="272" width="316" height="1" fill="#2dd4bf" fill-opacity=".25"/>
+  <rect y="0" width="1200" height="52" fill="#fff" fill-opacity=".015"/>
+  <rect y="52" width="1200" height="1" fill="#fff" fill-opacity=".08"/>
+</g>
+<rect x=".5" y=".5" width="1199" height="299" rx="16" fill="none" stroke="#fff" stroke-opacity=".10"/>
+<g font-family="Consolas,'SFMono-Regular',Menlo,'DejaVu Sans Mono','Liberation Mono','Courier New',monospace">
+  <text x="32" y="33" font-size="18" font-weight="700" fill="#e8edf4">&lt;Lone <tspan fill="#2dd4bf">Coder</tspan> /&gt;</text>
+  <g transform="translate(1168 0)">
+    <rect x="-128" y="13" width="128" height="27" rx="6" fill="#2dd4bf" fill-opacity=".06" stroke="#2dd4bf" stroke-opacity=".3"/>
+    <circle cx="-110" cy="26.5" r="4" fill="#2dd4bf" filter="url(#glow)"/>
+    <text x="-96" y="31.5" font-size="14" fill="#2dd4bf">Available</text>
+  </g>
+  <text x="52" y="110" font-size="17" fill="#8b97a8"><tspan fill="#2dd4bf">rebelwithoutacause@github</tspan>:~$ ./intro.sh</text>
+  <text x="52" y="182" font-size="46" font-weight="700" fill="#2dd4bf">&gt;</text>
+  <g font-size="46" font-weight="700" fill="#e8edf4"><text class="c k0 m0" x="107.2" y="182">I</text><text class="c k1 m0" x="134.8" y="182">'</text><text class="c k2 m0" x="162.4" y="182">m</text><text class="c k4 m0" x="217.6" y="182">T</text><text class="c k5 m0" x="245.2" y="182">e</text><text class="c k6 m0" x="272.8" y="182">d</text><text class="c k7 m0" x="300.4" y="182">d</text><text class="c k8" x="107.2" y="182">S</text><text class="c k9" x="134.8" y="182">o</text><text class="c k10" x="162.4" y="182">f</text><text class="c k11" x="190.0" y="182">t</text><text class="c k12" x="217.6" y="182">w</text><text class="c k13" x="245.2" y="182">a</text><text class="c k14" x="272.8" y="182">r</text><text class="c k15" x="300.4" y="182">e</text><text class="c k17" x="355.6" y="182">D</text><text class="c k18" x="383.2" y="182">e</text><text class="c k19" x="410.8" y="182">v</text><text class="c k20" x="438.4" y="182">e</text><text class="c k21" x="466.0" y="182">l</text><text class="c k22" x="493.6" y="182">o</text><text class="c k23" x="521.2" y="182">p</text><text class="c k24" x="548.8" y="182">e</text><text class="c k25" x="576.4" y="182">r</text><text class="c k26" x="107.2" y="182">Q</text><text class="c k27" x="134.8" y="182">A</text><text class="c k29" x="190.0" y="182">A</text><text class="c k30" x="217.6" y="182">u</text><text class="c k31" x="245.2" y="182">t</text><text class="c k32" x="272.8" y="182">o</text><text class="c k33" x="300.4" y="182">m</text><text class="c k34" x="328.0" y="182">a</text><text class="c k35" x="355.6" y="182">t</text><text class="c k36" x="383.2" y="182">i</text><text class="c k37" x="410.8" y="182">o</text><text class="c k38" x="438.4" y="182">n</text><text class="c k40" x="493.6" y="182">E</text><text class="c k41" x="521.2" y="182">n</text><text class="c k42" x="548.8" y="182">g</text><text class="c k43" x="576.4" y="182">i</text><text class="c k44" x="604.0" y="182">n</text><text class="c k45" x="631.6" y="182">e</text><text class="c k46" x="659.2" y="182">e</text><text class="c k47" x="686.8" y="182">r</text><text class="c k48" x="107.2" y="182">C</text><text class="c k49" x="134.8" y="182">y</text><text class="c k50" x="162.4" y="182">b</text><text class="c k51" x="190.0" y="182">e</text><text class="c k52" x="217.6" y="182">r</text><text class="c k53" x="245.2" y="182">s</text><text class="c k54" x="272.8" y="182">e</text><text class="c k55" x="300.4" y="182">c</text><text class="c k56" x="328.0" y="182">u</text><text class="c k57" x="355.6" y="182">r</text><text class="c k58" x="383.2" y="182">i</text><text class="c k59" x="410.8" y="182">t</text><text class="c k60" x="438.4" y="182">y</text><text class="c k62" x="493.6" y="182">E</text><text class="c k63" x="521.2" y="182">n</text><text class="c k64" x="548.8" y="182">t</text><text class="c k65" x="576.4" y="182">h</text><text class="c k66" x="604.0" y="182">u</text><text class="c k67" x="631.6" y="182">s</text><text class="c k68" x="659.2" y="182">i</text><text class="c k69" x="686.8" y="182">a</text><text class="c k70" x="714.4" y="182">s</text><text class="c k71" x="742.0" y="182">t</text><text class="c k72" x="107.2" y="182">A</text><text class="c k73" x="134.8" y="182">p</text><text class="c k74" x="162.4" y="182">a</text><text class="c k75" x="190.0" y="182">c</text><text class="c k76" x="217.6" y="182">h</text><text class="c k77" x="245.2" y="182">e</text><text class="c k79" x="300.4" y="182">J</text><text class="c k80" x="328.0" y="182">M</text><text class="c k81" x="355.6" y="182">e</text><text class="c k82" x="383.2" y="182">t</text><text class="c k83" x="410.8" y="182">e</text><text class="c k84" x="438.4" y="182">r</text><text class="c k86" x="493.6" y="182">C</text><text class="c k87" x="521.2" y="182">o</text><text class="c k88" x="548.8" y="182">n</text><text class="c k89" x="576.4" y="182">t</text><text class="c k90" x="604.0" y="182">r</text><text class="c k91" x="631.6" y="182">i</text><text class="c k92" x="659.2" y="182">b</text><text class="c k93" x="686.8" y="182">u</text><text class="c k94" x="714.4" y="182">t</text><text class="c k95" x="742.0" y="182">o</text><text class="c k96" x="769.6" y="182">r</text></g>
+  <g class="cur"><rect class="blink" x="109.2" y="146.12" width="23.6" height="42.3" rx="2" fill="#2dd4bf" fill-opacity=".9" filter="url(#glow)"/></g>
+  <text x="52" y="228" font-size="15" fill="#8b97a8" fill-opacity=".85"><tspan fill="#2dd4bf">&gt;</tspan> CODE.  <tspan fill="#2dd4bf">&gt;</tspan> DEBUG.  <tspan fill="#2dd4bf">&gt;</tspan> COFFEE.  <tspan fill="#2dd4bf">&gt;</tspan> REPEAT.</text>
+  <text x="52" y="274" font-size="14" fill="#8b97a8">github.com/rebelwithoutacause  <tspan fill="#2dd4bf">·</tspan>  lonecoder.nsh.one</text>
+</g>
+</svg>
