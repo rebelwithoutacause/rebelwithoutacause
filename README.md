@@ -91,6 +91,12 @@
   <img src="https://github-readme-streak-stats-theta.vercel.app?user=rebelwithoutacause&theme=tokyonight&hide_border=true" />
 </p>
 
+<p align="center">
+  <a href="https://raw.githubusercontent.com/rebelwithoutacause/rebelwithoutacause/output/space-invaders.svg">
+    <img src="https://raw.githubusercontent.com/rebelwithoutacause/rebelwithoutacause/output/space-invaders.svg" alt="Contribution graph rendered as a Space Invaders arcade scene" width="100%" />
+  </a>
+</p>
+
 ---
 
 <div align="center">
