@@ -80,7 +80,42 @@ const SPRITES = {
   ],
 };
 
-const CANNON = ['......X......', '.....XXX.....', '.....XXX.....', '.XXXXXXXXXXX.', 'XXXXXXXXXXXXX', 'XXXXXXXXXXXXX', 'XXXXXXXXXXXXX'];
+// Player fighter: left half including the centre column, mirrored at load time.
+// k outline · d/m/l/s hull dark→silver · n neon edge · c/C canopy · b blue · p purple
+// e exhaust nozzle · w blinking nav light
+const SHIP = [
+  '...............kn',
+  '...............ks',
+  '..............kml',
+  '..............kml',
+  '.............kmls',
+  '............kdmnC',
+  '..n........kdmncC',
+  '..s.......kdmmncc',
+  '.kmk......kdmlncc',
+  '.kmk.....kdmlmbcc',
+  '.kmk...kkdmlmmbbc',
+  '.kmlkkkddmlmmpbbm',
+  'kdmldmmdmlllmpbms',
+  'knlsllllllsslpbml',
+  'kdmmkmmmkmmmmpdml',
+  'kddwdkdmmkmmdpddm',
+  '.kkkkkddddkdeedkd',
+  '.........kmeeeekd',
+  '..........keeeekk',
+].map((r) => r + [...r.slice(0, -1)].reverse().join(''));
+const SHIP_COLORS = {
+  k: '#090d22', d: '#232c54', m: '#45527f', l: '#8897cc', s: '#e6ecff', n: '#41e2ff',
+  c: '#169fd2', C: '#d2f9ff', b: '#2f6bff', p: '#8b5cf6', e: '#04060d', w: '#ff4fd8',
+};
+// Engine flame frames (4 px wide, one per nozzle): W white-hot core → c cyan → b blue → p purple.
+const FLAMES = [
+  ['cWWc', '.WW.', '.cc.', '.bb.', '.p..', '....', '....'],
+  ['cWWc', 'cWWc', '.cc.', '.cc.', '.bb.', '..p.', '....'],
+  ['cWWc', '.WW.', 'cccc', '.cc.', '.bb.', '.bb.', '..p.'],
+];
+const FLAME_COLORS = { W: '#f4feff', c: '#41e2ff', b: '#2f6bff', p: '#8b5cf6' };
+const MUZZLE = ['..X..', 'X.X.X', '.XXX.', 'XXXXX', '.XXX.'];
 const UFO = ['.....XXXXXX.....', '...XXXXXXXXXX...', '..XXXXXXXXXXXX..', '.XX.XX.XX.XX.XX.', 'XXXXXXXXXXXXXXXX', '..XXX..XX..XXX..', '...X........X...'];
 const BOOM = ['X...X...X', '.X..X..X.', '..X...X..', 'XX.....XX', '..X...X..', '.X..X..X.', 'X...X...X'];
 const BOMB = ['X..', '.X.', '..X', '.X.', 'X..', '.X.', '..X'];
@@ -172,6 +207,16 @@ function bitmapPath(rows, x, y, px) {
   return d;
 }
 
+// Multi-colour bitmap: one path per palette key. `cls` optionally tags keys with a class.
+function paletteBitmap(rows, colors, x, y, px, cls = {}) {
+  return Object.entries(colors)
+    .map(([key, fill]) => {
+      const d = bitmapPath(rows.map((r) => r.replace(/./g, (ch) => (ch === key ? 'X' : '.'))), x, y, px);
+      return d ? `<path${cls[key] ? ` class="${cls[key]}"` : ''} fill="${fill}" d="${d}"/>` : '';
+    })
+    .join('');
+}
+
 function text(str, x, y, px, align = 'start') {
   const chars = [...String(str).toUpperCase()];
   const width = chars.length * 6 * px - px;
@@ -210,9 +255,10 @@ function render(calendar, login) {
   const gridX = 46, gridY = 94;
   const gridW = cols * P - GAP, gridH = 7 * P - GAP;
   const W = gridX + gridW + 28;
-  const groundY = gridY + gridH + 72;
-  const cannonPx = 1.5;
-  const cannonY = groundY - 4 - CANNON.length * cannonPx;
+  const groundY = gridY + gridH + 104;
+  const shipPx = 1.75;
+  const shipW = SHIP[0].length * shipPx, shipH = SHIP.length * shipPx;
+  const shipY = groundY - 15 - shipH; // leaves room for the exhaust flames
   const H = groundY + 38;
   const cellX = (c) => gridX + c * P;
   const cellY = (r) => gridY + r * P;
@@ -325,14 +371,20 @@ function render(calendar, login) {
     const fire = 16 + k * 26;
     return { x: cellX(col) + CELL / 2, hitY: cellY(Math.max(row, 0)) + CELL, fire };
   });
-  const homeX = gridX + 24;
+  const homeX = gridX + shipW / 2 + 4;
   const cannonFrames = [`0%{transform:translateX(${n(homeX)}px)}`];
   shots.forEach((s) => {
     cannonFrames.push(`${pct(s.fire - 3)}{transform:translateX(${n(s.x)}px)}`, `${pct(s.fire + 5)}{transform:translateX(${n(s.x)}px)}`);
   });
   cannonFrames.push(`94%{transform:translateX(${n(homeX)}px)}`, `100%{transform:translateX(${n(homeX)}px)}`);
 
-  const laserTop = cannonY - 12;
+  // Recoil kick and muzzle flash at every shot.
+  const kick = shots.map((s) => `${pct(s.fire - 0.01)}{transform:translateY(0)}${pct(s.fire)}{transform:translateY(2.4px)}${pct(s.fire + 1.6)}{transform:translateY(0)}`).join('');
+  const flash = shots.map((s) => `${pct(s.fire - 0.01)}{opacity:0;transform:scale(.4)}${pct(s.fire)}{opacity:1;transform:scale(1.25)}${pct(s.fire + 1.1)}{opacity:0;transform:scale(.8)}`).join('');
+
+  const laserLen = 18;
+  const laserTop = shipY - laserLen + 2;
+  const wingDx = (SHIP[0].length / 2 - 2.5) * shipPx; // wing-tip cannons
   const shotCss = [], shotSvg = [];
   shots.forEach((s, k) => {
     const dy = n(s.hitY - laserTop);
@@ -341,12 +393,19 @@ function render(calendar, login) {
       `.l${k}{animation:l${k} ${LOOP}s linear infinite}` +
         `@keyframes l${k}{0%,${pct(t0 - 0.01)}{opacity:0;transform:translateY(0)}${pct(t0)}{opacity:1;transform:translateY(0)}` +
         `${pct(t1)}{opacity:1;transform:translateY(${dy}px)}${pct(t1 + 0.01)},100%{opacity:0;transform:translateY(${dy}px)}}`,
+      // Twin wing bolts escort the main beam and fade out before reaching the grid.
+      `.w${k}{animation:w${k} ${LOOP}s ease-out infinite}` +
+        `@keyframes w${k}{0%,${pct(t0 - 0.01)}{opacity:0;transform:translateY(0)}${pct(t0 + 0.2)}{opacity:.9;transform:translateY(0)}` +
+        `${pct(t0 + 2.4)}{opacity:0;transform:translateY(${n(dy * 0.55)}px)}100%{opacity:0}}`,
       `.x${k}{animation:x${k} ${LOOP}s steps(1,end) infinite}` +
         `@keyframes x${k}{0%,${pct(t1 - 0.01)}{opacity:0;transform:scale(.5)}${pct(t1)}{opacity:1;transform:scale(.7)}` +
         `${pct(t1 + 1.5)}{opacity:1;transform:scale(1)}${pct(t1 + 3.5)}{opacity:.7;transform:scale(1.15)}${pct(t2)},100%{opacity:0}}`,
     );
     shotSvg.push(
-      `<rect class="laser l${k}" x="${n(s.x - 1.25)}" y="${n(laserTop)}" width="2.5" height="12" rx="1.25"/>`,
+      `<g class="laser l${k}"><rect class="beam" x="${n(s.x - 3)}" y="${n(laserTop - 2)}" width="6" height="${laserLen + 4}" rx="3"/>` +
+        `<rect x="${n(s.x - 1.5)}" y="${n(laserTop)}" width="3" height="${laserLen}" rx="1.5" fill="#41e2ff"/>` +
+        `<rect x="${n(s.x - 0.6)}" y="${n(laserTop + 1)}" width="1.2" height="${laserLen - 2}" fill="#ffffff"/></g>`,
+      ...[-1, 1].map((side) => `<rect class="wbolt w${k}" x="${n(s.x + side * wingDx - 0.8)}" y="${n(shipY + 2)}" width="1.6" height="7" rx=".8"/>`),
       `<path class="boom x${k}" d="${bitmapPath(BOOM, s.x - 6.75, s.hitY - 7, 1.5)}"/>`,
     );
   });
@@ -392,7 +451,7 @@ function render(calendar, login) {
     .join('');
 
   // --- Footer: lives, caption, legend.
-  const lives = [0, 1].map((i) => bitmapPath(CANNON, gridX + 16 + i * 24, groundY + 13, 1.2)).join('');
+  const lives = [0, 1].map((i) => paletteBitmap(SHIP, SHIP_COLORS, gridX + 14 + i * 26, groundY + 9.5, 0.62)).join('');
   const livesNum = text('3', gridX, groundY + 14, 1.3).d;
   const caption = text(`${total} contributions in the last year`, W / 2, groundY + 14, 1.15, 'middle').d;
   const legendRight = gridX + gridW;
@@ -405,6 +464,29 @@ function render(calendar, login) {
     legend.push(`<rect x="${legendX + i * (sq + sqGap)}" y="${groundY + 15.5}" width="${sq}" height="${sq / 2 + 1}" rx="1" fill="${HUES.green[i]}"/>`);
   }
   const legendText = text('Less', legendX - 6, groundY + 13, 1.1, 'end').d + text('More', legendRight, groundY + 13, 1.1, 'end').d;
+
+  // --- Player fighter: body, edge glow, canopy light, animated exhaust, muzzle flash.
+  const solid = SHIP.map((r) => r.replace(/[^.]/g, 'X'));
+  const flameY = shipY + shipH;
+  const engineCols = [11, SHIP[0].length - 15];
+  const nozzleX = engineCols.map((c) => (c + 2) * shipPx);
+  const flames = FLAMES.map(
+    (frame, i) => `<g class="fl fl${i}">${engineCols.map((c) => paletteBitmap(frame, FLAME_COLORS, c * shipPx, flameY, shipPx)).join('')}</g>`,
+  ).join('');
+  const muzzlePx = 1.4;
+  const shipSvg = `<g class="art" transform="translate(${-n(shipW / 2)} 0)">
+    <g class="cannon">
+      <ellipse class="eglow" cx="${n(shipW / 2)}" cy="${groundY}" rx="${n(shipW * 0.62)}" ry="4" fill="url(#exhaust)"/>
+      <g class="hover"><g class="kick">
+        ${nozzleX.map((x) => `<ellipse class="eglow" cx="${n(x)}" cy="${n(flameY + 4)}" rx="6" ry="8" fill="url(#exhaust)"/>`).join('')}
+        ${flames}
+        <path d="${bitmapPath(solid, 0, shipY, shipPx)}" fill="#41e2ff" opacity=".3" filter="url(#halo)"/>
+        <ellipse cx="${n(shipW / 2)}" cy="${n(shipY + 7.5 * shipPx)}" rx="4" ry="6" fill="#41e2ff" opacity=".35" filter="url(#halo)"/>
+        ${paletteBitmap(SHIP, SHIP_COLORS, 0, shipY, shipPx, { w: 'nav', n: 'edge' })}
+        <path class="muzzle" fill="#e8fdff" filter="url(#bloom)" d="${bitmapPath(MUZZLE, shipW / 2 - 2.5 * muzzlePx, shipY - 5 * muzzlePx - 0.5, muzzlePx)}"/>
+      </g></g>
+    </g>
+  </g>`;
 
   const ufoW = UFO[0].length * 1.6;
 
@@ -424,7 +506,24 @@ function render(calendar, login) {
 @keyframes tw{0%,100%{opacity:.85}45%{opacity:.15}55%{opacity:1}}
 .cannon{animation:cannon ${LOOP}s ease-in-out infinite;transform:translateX(${n(homeX)}px)}
 @keyframes cannon{${cannonFrames.join('')}}
-.laser{fill:#e6fdff;filter:url(#bloom);opacity:0}
+.hover{animation:hover 2.8s ease-in-out infinite}
+@keyframes hover{0%,100%{transform:translateY(0)}50%{transform:translateY(-1.6px)}}
+.kick{animation:kick ${LOOP}s linear infinite}
+@keyframes kick{0%{transform:translateY(0)}${kick}100%{transform:translateY(0)}}
+.fl{opacity:0;animation:fl .27s steps(1,end) infinite}
+.fl1{animation-delay:-.18s}.fl2{animation-delay:-.09s}
+@keyframes fl{0%{opacity:1}33.33%{opacity:0}}
+.eglow{animation:eglow .9s ease-in-out infinite}
+@keyframes eglow{0%,100%{opacity:.6}50%{opacity:.95}}
+.nav{animation:nav 1.6s steps(1,end) infinite}
+@keyframes nav{50%{fill:#4a1846}}
+.edge{animation:edge 2.4s ease-in-out infinite}
+@keyframes edge{50%{fill:#b4f6ff}}
+.muzzle{opacity:0;transform-box:fill-box;transform-origin:center;animation:muzzle ${LOOP}s linear infinite}
+@keyframes muzzle{0%{opacity:0}${flash}100%{opacity:0}}
+.laser{filter:url(#bloom);opacity:0}
+.beam{fill:#2f6bff;opacity:.5}
+.wbolt{fill:#b48cff;filter:url(#bloom);opacity:0}
 .boom{fill:#fff6c9;filter:url(#bloom);opacity:0;transform-box:fill-box;transform-origin:center}
 .bomb{fill:#ffd36b;opacity:0}
 .spark{fill:#ff8a5c;opacity:0}
@@ -465,6 +564,9 @@ ${bombCss}
   <filter id="bloom" x="-50%" y="-50%" width="200%" height="200%">
     <feGaussianBlur stdDeviation="1.6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
   </filter>
+  <radialGradient id="exhaust">
+    <stop offset="0" stop-color="#41e2ff" stop-opacity=".55"/><stop offset=".5" stop-color="#2f6bff" stop-opacity=".18"/><stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/>
+  </radialGradient>
   <filter id="halo" x="-10%" y="-30%" width="120%" height="160%"><feGaussianBlur stdDeviation="2.4"/></filter>
   <filter id="soft" x="-10%" y="-40%" width="120%" height="180%">
     <feGaussianBlur stdDeviation=".9" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
@@ -484,12 +586,10 @@ ${bombCss}
   <g>${cells.join('')}</g>
   <g class="art">${overlays.join('')}</g>
   <g class="art">${bombSvg}${shotSvg.join('')}</g>
-  <g class="art" transform="translate(${-n(CANNON[0].length * cannonPx / 2)} 0)">
-    <g class="cannon"><path fill="#4cf271" filter="url(#bloom)" d="${bitmapPath(CANNON, 0, cannonY, cannonPx)}"/></g>
-  </g>
+  ${shipSvg}
   <rect class="art" x="${gridX}" y="${groundY}" width="${gridW}" height="1.5" fill="#4cf271" opacity=".85" filter="url(#bloom)"/>
   <g class="art">
-    <path fill="#4cf271" d="${livesNum}${lives}"/>
+    <path fill="#4cf271" d="${livesNum}"/>${lives}
     <path fill="#7d86b8" d="${caption}${legendText}"/>
     ${legend.join('')}
   </g>
