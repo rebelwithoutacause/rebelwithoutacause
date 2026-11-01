@@ -25,7 +25,7 @@
 
 <table>
 <tr>
-<td align="center" valign="top" width="276">
+<td align="center" valign="top" colspan="2" width="276">
 <p><b>QA &amp; Testing Tools</b></p>
 <a href="https://www.selenium.dev/"><img src="assets/skills/tiles/selenium.svg" alt="Selenium" title="Selenium" width="58" height="70"></a>
 <a href="https://www.postman.com/"><img src="assets/skills/tiles/postman.svg" alt="Postman" title="Postman" width="58" height="70"></a>
@@ -39,16 +39,18 @@
 <a href="https://learn.microsoft.com/en-us/dotnet/core/testing/"><img src="assets/skills/tiles/unit-testing.svg" alt="Unit Testing (C#)" title="Unit Testing (C#)" width="58" height="70"></a>
 <a href="https://stryker-mutator.io/"><img src="assets/skills/tiles/stryker.svg" alt="Stryker" title="Stryker" width="58" height="70"></a>
 </td>
-<td align="center" valign="top" width="276">
+<td align="center" valign="top" colspan="2" width="276">
 <p><b>Program&shy;ming Languages</b></p>
+<br>
 <a href="https://learn.microsoft.com/en-us/dotnet/csharp/"><img src="assets/skills/tiles/csharp.svg" alt="C#" title="C#" width="58" height="70"></a>
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img src="assets/skills/tiles/javascript.svg" alt="JavaScript" title="JavaScript" width="58" height="70"></a>
 <a href="https://en.wikipedia.org/wiki/SQL"><img src="assets/skills/tiles/sql.svg" alt="SQL" title="SQL" width="58" height="70"></a><br>
 <a href="https://developer.mozilla.org/en-US/docs/Web/HTML"><img src="assets/skills/tiles/html5.svg" alt="HTML5" title="HTML5" width="58" height="70"></a>
 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS"><img src="assets/skills/tiles/css3.svg" alt="CSS3" title="CSS3" width="58" height="70"></a>
 </td>
-<td align="center" valign="top" width="276">
+<td align="center" valign="top" colspan="2" width="276">
 <p><b>Cyber&shy;security Tools</b></p>
+<br>
 <a href="https://nmap.org/"><img src="assets/skills/tiles/nmap.svg" alt="Nmap" title="Nmap" width="58" height="70"></a>
 <a href="https://hashcat.net/hashcat/#gh-light-mode-only"><img src="assets/skills/tiles/hashcat-light.svg" alt="Hashcat" title="Hashcat" width="58" height="70"></a><a href="https://hashcat.net/hashcat/#gh-dark-mode-only"><img src="assets/skills/tiles/hashcat-dark.svg" alt="Hashcat" title="Hashcat" width="58" height="70"></a>
 <a href="https://sqlmap.org/"><img src="assets/skills/tiles/sqlmap.svg" alt="SQLMap" title="SQLMap" width="58" height="70"></a>
@@ -60,26 +62,18 @@
 </tr>
 <tr></tr>
 <tr>
-<td align="center" valign="top" colspan="3">
-<p><b>Development &amp; DevOps Tools</b></p>
+<td align="center" valign="top" colspan="2" width="276">
+<p><b>Develop&shy;ment &amp; DevOps Tools</b></p>
 <a href="https://git-scm.com/"><img src="assets/skills/tiles/git.svg" alt="Git" title="Git" width="58" height="70"></a>
 <a href="https://github.com/#gh-light-mode-only"><img src="assets/skills/tiles/github-light.svg" alt="GitHub" title="GitHub" width="58" height="70"></a><a href="https://github.com/#gh-dark-mode-only"><img src="assets/skills/tiles/github-dark.svg" alt="GitHub" title="GitHub" width="58" height="70"></a>
 <a href="https://www.docker.com/"><img src="assets/skills/tiles/docker.svg" alt="Docker" title="Docker" width="58" height="70"></a>
 <a href="https://github.com/features/actions"><img src="assets/skills/tiles/github-actions.svg" alt="GitHub Actions" title="GitHub Actions" width="58" height="70"></a>
 </td>
-</tr>
-<tr></tr>
-<tr>
-<td align="center" valign="top" width="276">
-<p><b>Data&shy;bases</b></p>
-<a href="https://en.wikipedia.org/wiki/SQL"><img src="assets/skills/tiles/sql.svg" alt="SQL" title="SQL" width="58" height="70"></a>
-<a href="https://www.mysql.com/"><img src="assets/skills/tiles/mysql.svg" alt="MySQL" title="MySQL" width="58" height="70"></a>
-</td>
-<td align="center" valign="top" width="276">
+<td align="center" valign="top" colspan="2" width="276">
 <p><b>Virtual&shy;ization</b></p>
 <a href="https://www.virtualbox.org/"><img src="assets/skills/tiles/virtualbox.svg" alt="Oracle VM VirtualBox" title="Oracle VM VirtualBox" width="58" height="70"></a>
 </td>
-<td align="center" valign="top" width="276">
+<td align="center" valign="top" colspan="2" width="276">
 <p><b>Oper&shy;ating Systems</b></p>
 <a href="https://www.microsoft.com/windows"><img src="assets/skills/tiles/windows.svg" alt="Windows" title="Windows" width="58" height="70"></a>
 <a href="https://www.kernel.org/"><img src="assets/skills/tiles/linux.svg" alt="Linux" title="Linux" width="58" height="70"></a>
@@ -87,7 +81,12 @@
 </tr>
 <tr></tr>
 <tr>
-<td align="center" valign="top" colspan="3">
+<td align="center" valign="top" colspan="3" width="414">
+<p><b>Data&shy;bases</b></p>
+<a href="https://en.wikipedia.org/wiki/SQL"><img src="assets/skills/tiles/sql.svg" alt="SQL" title="SQL" width="58" height="70"></a>
+<a href="https://www.mysql.com/"><img src="assets/skills/tiles/mysql.svg" alt="MySQL" title="MySQL" width="58" height="70"></a>
+</td>
+<td align="center" valign="top" colspan="3" width="414">
 <p><b>AI Tools</b></p>
 <a href="https://www.anthropic.com/claude-code"><img src="assets/skills/tiles/claude.svg" alt="Claude Code" title="Claude Code" width="58" height="70"></a>
 <a href="https://lovable.dev/"><img src="assets/skills/tiles/lovable.svg" alt="Lovable" title="Lovable" width="58" height="70"></a>
