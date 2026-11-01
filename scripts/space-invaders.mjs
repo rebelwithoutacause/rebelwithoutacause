@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 // Renders a GitHub contribution calendar as a Space Invaders arcade scene (SVG).
 // Every day of the calendar is drawn as a cell at its real week/weekday position;
-// the invaders are painted onto those same cells, tinted by each day's level.
+// days with contributions become arcade blocks coloured by level, and the player
+// ship shoots only at real contribution days.
 //
 // Usage:
 //   GITHUB_TOKEN=... node scripts/space-invaders.mjs --user <login> [--out dist/space-invaders.svg]
@@ -63,23 +64,6 @@ const LEVELS = { NONE: 0, FIRST_QUARTILE: 1, SECOND_QUARTILE: 2, THIRD_QUARTILE:
 // Pixel art
 // ---------------------------------------------------------------------------
 
-// Invaders are 7 rows tall so they fit the 7 weekday rows exactly.
-// Each has two frames; cells that differ between frames animate the legs.
-const SPRITES = {
-  squid: [
-    ['...XX...', '..XXXX..', '.XXXXXX.', 'XX.XX.XX', 'XXXXXXXX', '..X..X..', '.X.XX.X.'],
-    ['...XX...', '..XXXX..', '.XXXXXX.', 'XX.XX.XX', 'XXXXXXXX', '.X.XX.X.', 'X......X'],
-  ],
-  crab: [
-    ['..X.....X..', '...X...X...', '..XXXXXXX..', '.XX.XXX.XX.', 'XXXXXXXXXXX', 'X.XXXXXXX.X', 'X.X.....X.X'],
-    ['..X.....X..', 'X..X...X..X', 'X.XXXXXXX.X', 'XXX.XXX.XXX', 'XXXXXXXXXXX', '.XXXXXXXXX.', '..X.....X..'],
-  ],
-  octopus: [
-    ['....XXXX....', '.XXXXXXXXXX.', 'XXXXXXXXXXXX', 'XXX..XX..XXX', 'XXXXXXXXXXXX', '..XX.XX.XX..', 'XX........XX'],
-    ['....XXXX....', '.XXXXXXXXXX.', 'XXXXXXXXXXXX', 'XXX..XX..XXX', 'XXXXXXXXXXXX', '.XX..XX..XX.', '..XX....XX..'],
-  ],
-};
-
 // Player fighter: left half including the centre column, mirrored at load time.
 // k outline · d/m/l/s hull dark→silver · n neon edge · c/C canopy · b blue · p purple
 // e exhaust nozzle · w blinking nav light
@@ -116,19 +100,6 @@ const FLAMES = [
 ];
 const FLAME_COLORS = { W: '#f4feff', c: '#41e2ff', b: '#2f6bff', p: '#8b5cf6' };
 const MUZZLE = ['..X..', 'X.X.X', '.XXX.', 'XXXXX', '.XXX.'];
-const UFO = ['.....XXXXXX.....', '...XXXXXXXXXX...', '..XXXXXXXXXXXX..', '.XX.XX.XX.XX.XX.', 'XXXXXXXXXXXXXXXX', '..XXX..XX..XXX..', '...X........X...'];
-const BOOM = ['X...X...X', '.X..X..X.', '..X...X..', 'XX.....XX', '..X...X..', '.X..X..X.', 'X...X...X'];
-const BOMB = ['X..', '.X.', '..X', '.X.', 'X..', '.X.', '..X'];
-const SPARK = ['X.X.X', '.XXX.', 'XXXXX'];
-
-// Preferred formations first; the first one that fits inside the full weeks wins.
-const FORMATIONS = [
-  ['squid', 'crab', 'octopus', 'crab', 'squid'],
-  ['squid', 'crab', 'squid', 'crab', 'squid'],
-  ['crab', 'squid', 'crab'],
-  ['squid', 'crab'],
-  ['squid'],
-];
 
 // 5x7 bitmap font (glyph rows as bit strings).
 const FONT = {
@@ -161,13 +132,9 @@ const FONT = {
 // Palette
 // ---------------------------------------------------------------------------
 
-// Contribution level ramps (index = level 0..4).
-const SPACE = ['#0e1330', '#1a2050', '#262c74', '#34399a', '#4748c2'];
-const HUES = {
-  green: ['#1b6a36', '#1f9a43', '#2ccd57', '#58f57c', '#d0ffd3'],
-  cyan: ['#14647c', '#148aa6', '#1bbbdc', '#4ae6ff', '#d2f9ff'],
-  magenta: ['#6e2273', '#932597', '#bf35bf', '#ec58e2', '#ffc2f7'],
-};
+// Block colour per contribution level (index = level 0..4): empty slot, then
+// purple → blue → cyan → neon green, rising in brightness with activity.
+const BLOCKS = ['#0e1330', '#35287c', '#3a5ee0', '#1cbde3', '#4cf271'];
 
 const hexToRgb = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16));
 const rgbToHex = (rgb) => '#' + rgb.map((v) => Math.round(v).toString(16).padStart(2, '0')).join('');
@@ -263,68 +230,58 @@ function render(calendar, login) {
   const cellX = (c) => gridX + c * P;
   const cellY = (r) => gridY + r * P;
 
-  // --- Formation: place invaders inside the longest run of complete weeks.
-  const full = weeks.map((w) => w.length === 7);
-  let run = { start: 0, len: 0 };
-  for (let c = 0, s = 0; c <= cols; c++) {
-    if (c < cols && full[c]) continue;
-    if (c - s > run.len) run = { start: s, len: c - s };
-    s = c + 1;
-  }
-  const widthOf = (name) => SPRITES[name][0][0].length;
-  const formation = FORMATIONS.find((f) => f.reduce((a, s) => a + widthOf(s), 0) + (f.length - 1) + 2 <= run.len) ?? [];
-  const spriteW = formation.reduce((a, s) => a + widthOf(s), 0);
-  const gap = run.len - spriteW - (formation.length - 1) * 2 >= 2 ? 2 : 1;
-  let cursor = run.start + Math.floor((run.len - spriteW - (formation.length - 1) * gap) / 2);
-
-  const mid = (formation.length - 1) / 2;
-  const aliens = formation.map((name, i) => {
-    const dist = Math.abs(i - mid);
-    const hue = dist === 0 ? 'magenta' : Math.round(dist) % 2 === 1 ? 'green' : 'cyan';
-    const alien = { name, hue, col: cursor, width: widthOf(name) };
-    cursor += alien.width + gap;
-    return alien;
+  // --- Targets: in each slice of the year, the busiest day that is the lowest
+  // block in its week (a clear line of fire), only from days with contributions.
+  const SHOTS = 4;
+  const reachable = (c) => cellX(c) + CELL / 2 - shipW / 2 >= 10 && cellX(c) + CELL / 2 + shipW / 2 <= W - 10;
+  const exposed = weeks.map((week, c) => {
+    const active = week.filter((d) => d.count > 0);
+    if (!active.length || !reachable(c)) return null;
+    const day = active.reduce((a, b) => (b.weekday > a.weekday ? b : a));
+    return { c, r: day.weekday, day };
   });
-
-  // Pixel map: "col,row" -> { alien, frame: 'both' | 'a' | 'b', shade }.
-  const pixels = new Map();
-  for (const alien of aliens) {
-    const [fa, fb] = SPRITES[alien.name];
-    const on = (frame, r, c) => r >= 0 && r < 7 && frame[r][c] === 'X';
-    for (let r = 0; r < 7; r++) {
-      for (let c = 0; c < alien.width; c++) {
-        const a = on(fa, r, c), b = on(fb, r, c);
-        if (!a && !b) continue;
-        const above = on(fa, r - 1, c) || on(fb, r - 1, c);
-        const below = on(fa, r + 1, c) || on(fb, r + 1, c);
-        const shade = !above ? 'hi' : !below ? 'lo' : 'mid';
-        pixels.set(`${alien.col + c},${r}`, { alien, frame: a && b ? 'both' : a ? 'a' : 'b', shade });
-      }
-    }
+  const targets = [];
+  for (let k = 0; k < SHOTS; k++) {
+    const lo = Math.floor((k * cols) / SHOTS), hi = Math.floor(((k + 1) * cols) / SHOTS);
+    const mid = (lo + hi - 1) / 2;
+    const best = exposed
+      .slice(lo, hi)
+      .filter(Boolean)
+      .sort((a, b) => b.day.count - a.day.count || Math.abs(a.c - mid) - Math.abs(b.c - mid))[0];
+    if (best) targets.push(best);
   }
+  const targetOf = new Map(targets.map((t, k) => [`${t.c},${t.r}`, k]));
 
-  const alienColor = (hue, level, shade) => {
-    const base = HUES[hue][level];
-    return shade === 'hi' ? mix(base, '#ffffff', 0.16) : shade === 'lo' ? mix(base, '#000000', 0.22) : base;
-  };
-
-  // --- Cells (the real calendar) + invader overlays + glow layer.
-  const cells = [], overlays = [], glow = [];
+  // --- Cells: every calendar day. Active days are bevelled arcade blocks.
+  const cells = [], glow = [];
+  let bevelHi = '', bevelLo = '', glints = '';
   weeks.forEach((week, c) => {
     for (const day of week) {
-      const r = day.weekday;
-      const x = cellX(c), y = cellY(r);
-      const px = pixels.get(`${c},${r}`);
-      const art = px && px.frame === 'both';
-      const fill = art ? alienColor(px.alien.hue, day.level, px.shade) : SPACE[day.level];
-      cells.push(
-        `<rect class="d" x="${x}" y="${y}" width="${CELL}" height="${CELL}" rx="2" fill="${fill}" ` +
-          `data-date="${day.date}" data-count="${day.count}" data-level="${day.level}"><title>${esc(tooltip(day))}</title></rect>`,
-      );
-      if (px) {
-        const cls = px.frame === 'both' ? '' : ` class="f${px.frame}"`;
-        if (!art) overlays.push(`<rect${cls} x="${x}" y="${y}" width="${CELL}" height="${CELL}" rx="2" fill="${alienColor(px.alien.hue, day.level, px.shade)}"/>`);
-        glow.push(`<rect${cls} x="${x}" y="${y}" width="${CELL}" height="${CELL}" fill="${HUES[px.alien.hue][3]}"/>`);
+      const x = cellX(c), y = cellY(day.weekday);
+      const rect =
+        `<rect class="d" x="${x}" y="${y}" width="${CELL}" height="${CELL}" rx="1" fill="${BLOCKS[day.level]}" ` +
+        `data-date="${day.date}" data-count="${day.count}" data-level="${day.level}"><title>${esc(tooltip(day))}</title></rect>`;
+      if (day.count === 0) {
+        cells.push(rect);
+        continue;
+      }
+      const hi = `M${x} ${y}h${CELL}v1.5h${-(CELL - 1.5)}v${CELL - 1.5}h-1.5z`;
+      const lo = `M${x + CELL} ${y + CELL}h${-CELL}v-1.5h${CELL - 1.5}v${-(CELL - 1.5)}h1.5z`;
+      const glint = `M${x + 2.5} ${y + 2.5}h1.5v1.5h-1.5z`;
+      const k = targetOf.get(`${c},${day.weekday}`);
+      if (k === undefined) {
+        cells.push(rect);
+        bevelHi += hi;
+        bevelLo += lo;
+        glints += glint;
+        if (day.level >= 3) glow.push(`<rect x="${x}" y="${y}" width="${CELL}" height="${CELL}" fill="${BLOCKS[day.level]}"/>`);
+      } else {
+        // Targets carry their own bevel so the whole block can be destroyed and respawned.
+        cells.push(
+          `<g class="tg tg${k}">${rect}<g class="art"><path d="${hi}" fill="#fff" opacity=".38"/><path d="${lo}" fill="#000" opacity=".35"/>` +
+            `<path d="${glint}" fill="#fff" opacity=".85"/>` +
+            `<rect class="wf wf${k}" x="${x - 1}" y="${y - 1}" width="${CELL + 2}" height="${CELL + 2}" rx="1.5" fill="#ffffff" filter="url(#bloom)"/></g></g>`,
+        );
       }
     }
   });
@@ -359,19 +316,17 @@ function render(calendar, login) {
   const hudLabels = [['SCORE<1>', hudCols[0]], ['HI-SCORE', hudCols[1]], ['STREAK', hudCols[2]]].map(([s, x]) => text(s, x, 18, 1.3, 'middle').d);
   const hudValues = [[pad(total, 5), hudCols[0]], [pad(best, 4), hudCols[1]], [pad(streak, 3), hudCols[2]]].map(([s, x]) => text(s, x, 34, 1.6, 'middle').d);
 
-  // --- Combat timeline (seconds / percentages of one loop).
+  // --- Combat timeline (percentages of one loop). The ship sweeps left to right,
+  // destroying each target block; destroyed blocks respawn later in the loop.
   const LOOP = 12;
-  const targetIdx = [...new Set([1, aliens.length - 2, Math.floor(aliens.length / 2)].filter((i) => i >= 0 && i < aliens.length))];
-  if (!targetIdx.length && aliens.length) targetIdx.push(0);
-  const shots = targetIdx.map((i, k) => {
-    const alien = aliens[i];
-    const col = alien.col + Math.floor((alien.width - 1) / 2);
-    let row = -1;
-    for (let r = 0; r < 7; r++) if (pixels.has(`${col},${r}`)) row = r;
-    const fire = 16 + k * 26;
-    return { x: cellX(col) + CELL / 2, hitY: cellY(Math.max(row, 0)) + CELL, fire };
-  });
-  const homeX = gridX + shipW / 2 + 4;
+  const shots = targets.map((t, k) => ({
+    x: cellX(t.c) + CELL / 2,
+    cy: cellY(t.r) + CELL / 2,
+    hitY: cellY(t.r) + CELL,
+    color: BLOCKS[t.day.level],
+    fire: 12 + k * 22,
+  }));
+  const homeX = gridX + gridW / 2;
   const cannonFrames = [`0%{transform:translateX(${n(homeX)}px)}`];
   shots.forEach((s) => {
     cannonFrames.push(`${pct(s.fire - 3)}{transform:translateX(${n(s.x)}px)}`, `${pct(s.fire + 5)}{transform:translateX(${n(s.x)}px)}`);
@@ -386,9 +341,13 @@ function render(calendar, login) {
   const laserTop = shipY - laserLen + 2;
   const wingDx = (SHIP[0].length / 2 - 2.5) * shipPx; // wing-tip cannons
   const shotCss = [], shotSvg = [];
+  const burst = (name, t, dx, dy) =>
+    `@keyframes ${name}{0%,${pct(t.start - 0.01)}{opacity:0;transform:translate(0,0)}${pct(t.start)}{opacity:1;transform:translate(0,0)}` +
+    `${pct(t.end)}{opacity:0;transform:translate(${n(dx)}px,${n(dy)}px)}100%{opacity:0;transform:translate(${n(dx)}px,${n(dy)}px)}}`;
   shots.forEach((s, k) => {
     const dy = n(s.hitY - laserTop);
-    const t0 = s.fire, t1 = s.fire + 3.5, t2 = t1 + 6;
+    const t0 = s.fire, t1 = s.fire + 3.5; // fire → impact (≈420 ms of flight)
+    const respawn = Math.min(t1 + 30, 97.5);
     shotCss.push(
       `.l${k}{animation:l${k} ${LOOP}s linear infinite}` +
         `@keyframes l${k}{0%,${pct(t0 - 0.01)}{opacity:0;transform:translateY(0)}${pct(t0)}{opacity:1;transform:translateY(0)}` +
@@ -397,34 +356,38 @@ function render(calendar, login) {
       `.w${k}{animation:w${k} ${LOOP}s ease-out infinite}` +
         `@keyframes w${k}{0%,${pct(t0 - 0.01)}{opacity:0;transform:translateY(0)}${pct(t0 + 0.2)}{opacity:.9;transform:translateY(0)}` +
         `${pct(t0 + 2.4)}{opacity:0;transform:translateY(${n(dy * 0.55)}px)}100%{opacity:0}}`,
-      `.x${k}{animation:x${k} ${LOOP}s steps(1,end) infinite}` +
-        `@keyframes x${k}{0%,${pct(t1 - 0.01)}{opacity:0;transform:scale(.5)}${pct(t1)}{opacity:1;transform:scale(.7)}` +
-        `${pct(t1 + 1.5)}{opacity:1;transform:scale(1)}${pct(t1 + 3.5)}{opacity:.7;transform:scale(1.15)}${pct(t2)},100%{opacity:0}}`,
+      // Block: white flash (120 ms), gone, then blinks back in.
+      `.wf${k}{animation:wf${k} ${LOOP}s steps(1,end) infinite}` +
+        `@keyframes wf${k}{0%{opacity:0}${pct(t1)}{opacity:1}${pct(t1 + 1)}{opacity:0}}`,
+      `.tg${k}{animation:tg${k} ${LOOP}s steps(1,end) infinite}` +
+        `@keyframes tg${k}{0%{opacity:1}${pct(t1 + 1)}{opacity:0}${pct(respawn)}{opacity:1}${pct(respawn + 0.4)}{opacity:0}` +
+        `${pct(respawn + 0.8)}{opacity:1}${pct(respawn + 1.2)}{opacity:0}${pct(respawn + 1.6)}{opacity:1}}`,
+      // Shockwave ring (≈360 ms).
+      `.sw${k}{animation:sw${k} ${LOOP}s ease-out infinite}` +
+        `@keyframes sw${k}{0%,${pct(t1 - 0.01)}{opacity:0;transform:scale(.1)}${pct(t1)}{opacity:.95;transform:scale(.15)}` +
+        `${pct(t1 + 3)}{opacity:0;transform:scale(1)}100%{opacity:0;transform:scale(1)}}`,
     );
     shotSvg.push(
       `<g class="laser l${k}"><rect class="beam" x="${n(s.x - 3)}" y="${n(laserTop - 2)}" width="6" height="${laserLen + 4}" rx="3"/>` +
         `<rect x="${n(s.x - 1.5)}" y="${n(laserTop)}" width="3" height="${laserLen}" rx="1.5" fill="#41e2ff"/>` +
         `<rect x="${n(s.x - 0.6)}" y="${n(laserTop + 1)}" width="1.2" height="${laserLen - 2}" fill="#ffffff"/></g>`,
       ...[-1, 1].map((side) => `<rect class="wbolt w${k}" x="${n(s.x + side * wingDx - 0.8)}" y="${n(shipY + 2)}" width="1.6" height="7" rx=".8"/>`),
-      `<path class="boom x${k}" d="${bitmapPath(BOOM, s.x - 6.75, s.hitY - 7, 1.5)}"/>`,
+      `<circle class="fx sw sw${k}" cx="${n(s.x)}" cy="${n(s.cy)}" r="13"/>`,
     );
+    // Six glowing fragments scatter outward (≈420 ms), four sparks fly further and fade.
+    const light = mix(s.color, '#ffffff', 0.55);
+    for (let j = 0; j < 6; j++) {
+      const a = (j / 6) * Math.PI * 2 + 0.35 + k * 0.6;
+      const dist = 11 + (j % 3) * 2;
+      shotCss.push(`.fr${k}_${j}{animation:fr${k}_${j} ${LOOP}s cubic-bezier(.2,.7,.3,1) infinite}` + burst(`fr${k}_${j}`, { start: t1, end: t1 + 3.5 }, Math.cos(a) * dist, Math.sin(a) * dist));
+      shotSvg.push(`<rect class="fx fr${k}_${j}" x="${n(s.x - 1.2)}" y="${n(s.cy - 1.2)}" width="2.4" height="2.4" fill="${j % 2 ? '#e8fdff' : light}" filter="url(#bloom)"/>`);
+    }
+    for (let j = 0; j < 4; j++) {
+      const a = (j / 4) * Math.PI * 2 + Math.PI / 4;
+      shotCss.push(`.sp${k}_${j}{animation:sp${k}_${j} ${LOOP}s ease-out infinite}` + burst(`sp${k}_${j}`, { start: t1 + 0.3, end: t1 + 3.2 }, Math.cos(a) * 18, Math.sin(a) * 18));
+      shotSvg.push(`<rect class="fx sp${k}_${j}" x="${n(s.x - 0.6)}" y="${n(s.cy - 0.6)}" width="1.2" height="1.2" fill="#fff6c9"/>`);
+    }
   });
-
-  // One invader bomb drops between shots.
-  let bombSvg = '', bombCss = '';
-  if (aliens.length) {
-    const alien = aliens[aliens.length - 1];
-    const bx = cellX(alien.col + Math.floor(alien.width / 2)) + CELL / 2;
-    const fall = n(groundY - 10 - (gridY + gridH + 2));
-    bombSvg =
-      `<path class="bomb" d="${bitmapPath(BOMB, bx - 2, gridY + gridH + 2, 1.3)}"/>` +
-      `<path class="spark" d="${bitmapPath(SPARK, bx - 4, groundY - 5, 1.6)}"/>`;
-    bombCss =
-      `.bomb{animation:bomb ${LOOP}s linear infinite}` +
-      `@keyframes bomb{0%,53.99%{opacity:0;transform:translateY(0)}54%{opacity:1;transform:translateY(0)}64%{opacity:1;transform:translateY(${fall}px)}64.01%,100%{opacity:0;transform:translateY(${fall}px)}}` +
-      `.spark{animation:spark ${LOOP}s steps(1,end) infinite}` +
-      `@keyframes spark{0%,63.99%{opacity:0}64%{opacity:1}68%,100%{opacity:0}}`;
-  }
 
   // --- Starfield: deterministic, kept out of the grid and label bands.
   const rand = mulberry32(hash(login || 'github'));
@@ -460,8 +423,7 @@ function render(calendar, login) {
   const legendX = legendRight - text('More', 0, 0, 1.1).width - 6 - legendW;
   const legend = [];
   for (let i = 0; i < 5; i++) {
-    legend.push(`<rect x="${legendX + i * (sq + sqGap)}" y="${groundY + 10}" width="${sq}" height="${sq / 2 + 1}" rx="1" fill="${SPACE[i]}"/>`);
-    legend.push(`<rect x="${legendX + i * (sq + sqGap)}" y="${groundY + 15.5}" width="${sq}" height="${sq / 2 + 1}" rx="1" fill="${HUES.green[i]}"/>`);
+    legend.push(`<rect x="${legendX + i * (sq + sqGap)}" y="${groundY + 10}" width="${sq}" height="${sq}" rx="1" fill="${BLOCKS[i]}"/>`);
   }
   const legendText = text('Less', legendX - 6, groundY + 13, 1.1, 'end').d + text('More', legendRight, groundY + 13, 1.1, 'end').d;
 
@@ -488,17 +450,10 @@ function render(calendar, login) {
     </g>
   </g>`;
 
-  const ufoW = UFO[0].length * 1.6;
-
   const css = `
 .d{transition:filter .25s ease,stroke .25s ease;stroke:transparent;stroke-width:1}
 .d:hover{filter:brightness(1.8) drop-shadow(0 0 3px #fff);stroke:#ffffff}
 .art{pointer-events:none}
-.fb{opacity:0}
-.fa{animation:fa 1.2s steps(1,end) infinite}
-.fb{animation:fb 1.2s steps(1,end) infinite}
-@keyframes fa{0%{opacity:1}50%{opacity:0}}
-@keyframes fb{0%{opacity:0}50%{opacity:1}}
 .glow{animation:pulse 3.6s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:.32}50%{opacity:.6}}
 .tw{animation:tw 4s ease-in-out infinite}
@@ -524,15 +479,9 @@ function render(calendar, login) {
 .laser{filter:url(#bloom);opacity:0}
 .beam{fill:#2f6bff;opacity:.5}
 .wbolt{fill:#b48cff;filter:url(#bloom);opacity:0}
-.boom{fill:#fff6c9;filter:url(#bloom);opacity:0;transform-box:fill-box;transform-origin:center}
-.bomb{fill:#ffd36b;opacity:0}
-.spark{fill:#ff8a5c;opacity:0}
+.fx,.wf{opacity:0}
+.sw{fill:none;stroke:#41e2ff;stroke-width:1.4;vector-effect:non-scaling-stroke;filter:url(#bloom);transform-box:fill-box;transform-origin:center}
 ${shotCss.join('\n')}
-${bombCss}
-.ufo{animation:ufo 26s linear infinite;animation-delay:3s;transform:translateX(-60px)}
-@keyframes ufo{0%{transform:translateX(-60px)}32%,100%{transform:translateX(${n(W + 20)}px)}}
-.ufo path{animation:ufoblink .5s steps(1,end) infinite}
-@keyframes ufoblink{50%{fill:#ff8bea}}
 .roll{animation:roll 7s linear infinite}
 @keyframes roll{0%{transform:translateY(-60px)}100%{transform:translateY(${H + 60}px)}}
 .screen{animation:flicker 9s steps(1,end) infinite}
@@ -543,7 +492,7 @@ ${bombCss}
   const screenR = 18;
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${n(W)} ${n(H)}" width="${n(W)}" height="${n(H)}" role="img" aria-labelledby="title desc">
 <title id="title">${esc(login ? `${login}'s` : 'GitHub')} contribution graph as a Space Invaders arcade scene</title>
-<desc id="desc">${esc(`${total} contributions in the last year. Each square is one day of the contribution calendar; the invaders are drawn onto the real cells and shaded by each day's activity.`)}</desc>
+<desc id="desc">${esc(`${total} contributions in the last year. Each square is one day of the contribution calendar; days with contributions are arcade blocks coloured by activity, and the ship shoots only at real contribution days.`)}</desc>
 <style>${css}</style>
 <defs>
   <radialGradient id="tube" cx="50%" cy="45%" r="75%">
@@ -578,14 +527,13 @@ ${bombCss}
 <g class="screen">
   <rect x="6" y="6" width="${n(W - 12)}" height="${n(H - 12)}" fill="url(#tube)"/>
   <g class="art">${starSvg}</g>
-  <g class="ufo art"><path fill="#ff3fd2" filter="url(#bloom)" d="${bitmapPath(UFO, 0, 50, 1.6)}"/></g>
   <g class="art" fill="#5ef2ff" filter="url(#soft)"><path d="${hudLabels.join('')}"/></g>
   <g class="art" fill="#f4f7ff" filter="url(#soft)"><path d="${hudValues.join('')}"/></g>
   <g class="art" fill="#7d86b8"><path d="${monthLabels.join('')}${dayLabels.join('')}"/></g>
   <g class="glow art" filter="url(#halo)">${glow.join('')}</g>
   <g>${cells.join('')}</g>
-  <g class="art">${overlays.join('')}</g>
-  <g class="art">${bombSvg}${shotSvg.join('')}</g>
+  <g class="art"><path d="${bevelHi}" fill="#fff" opacity=".38"/><path d="${bevelLo}" fill="#000" opacity=".35"/><path d="${glints}" fill="#fff" opacity=".85"/></g>
+  <g class="art">${shotSvg.join('')}</g>
   ${shipSvg}
   <rect class="art" x="${gridX}" y="${groundY}" width="${gridW}" height="1.5" fill="#4cf271" opacity=".85" filter="url(#bloom)"/>
   <g class="art">
