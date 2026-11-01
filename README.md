@@ -87,6 +87,14 @@
   <img src="https://github-readme-streak-stats-theta.vercel.app?user=rebelwithoutacause&theme=tokyonight&hide_border=true" />
 </p>
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/rebelwithoutacause/rebelwithoutacause/output/commit-invaders-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/rebelwithoutacause/rebelwithoutacause/output/commit-invaders.svg" />
+    <img alt="Commit Invaders contribution graph" src="https://raw.githubusercontent.com/rebelwithoutacause/rebelwithoutacause/output/commit-invaders.svg" />
+  </picture>
+</p>
+
 ---
 
 <div align="center">
