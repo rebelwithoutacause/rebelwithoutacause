@@ -100,6 +100,7 @@ const FLAMES = [
 ];
 const FLAME_COLORS = { W: '#f4feff', c: '#41e2ff', b: '#2f6bff', p: '#8b5cf6' };
 const MUZZLE = ['..X..', 'X.X.X', '.XXX.', 'XXXXX', '.XXX.'];
+const STAR = ['....X....', '.X..X..X.', '..X.X.X..', '...XXX...', 'XXXXXXXXX', '...XXX...', '..X.X.X..', '.X..X..X.', '....X....'];
 
 // 5x7 bitmap font (glyph rows as bit strings).
 const FONT = {
@@ -124,7 +125,7 @@ const FONT = {
   '-': '00000 00000 00000 11111 00000 00000 00000', ':': '00000 01100 01100 00000 01100 01100 00000',
   '.': '00000 00000 00000 00000 00000 01100 01100', '<': '00010 00100 01000 10000 01000 00100 00010',
   '>': '01000 00100 00010 00001 00010 00100 01000', '/': '00001 00001 00010 00100 01000 10000 10000',
-  '@': '01110 10001 10111 10101 10111 10000 01110', _: '00000 00000 00000 00000 00000 00000 11111',
+  '@': '01110 10001 10111 10101 10111 10000 01110', '+': '00000 00100 00100 11111 00100 00100 00000', _: '00000 00000 00000 00000 00000 00000 11111',
   ' ': '00000 00000 00000 00000 00000 00000 00000',
 };
 
@@ -302,9 +303,8 @@ function render(calendar, login) {
   });
   const dayLabels = [[1, 'Mon'], [3, 'Wed'], [5, 'Fri']].map(([r, s]) => text(s, gridX - 7, cellY(r) + 1.5, 1, 'end').d);
 
-  // --- HUD stats from the data.
+  // --- HUD: streak from the data; score and hi-score are arcade points (below).
   const total = calendar.totalContributions;
-  const best = Math.max(0, ...days.map((d) => d.count));
   let streak = 0;
   for (let i = days.length - 1; i >= 0; i--) {
     if (days[i].count > 0) streak++;
@@ -314,18 +314,23 @@ function render(calendar, login) {
   const pad = (v, len) => String(v).padStart(len, '0');
   const hudCols = [gridX + 50, W / 2, W - 96];
   const hudLabels = [['SCORE<1>', hudCols[0]], ['HI-SCORE', hudCols[1]], ['STREAK', hudCols[2]]].map(([s, x]) => text(s, x, 18, 1.3, 'middle').d);
-  const hudValues = [[pad(total, 5), hudCols[0]], [pad(best, 4), hudCols[1]], [pad(streak, 3), hudCols[2]]].map(([s, x]) => text(s, x, 34, 1.6, 'middle').d);
+  const hudValues = [text(pad(streak, 3), hudCols[2], 34, 1.6, 'middle').d];
 
   // --- Combat timeline (percentages of one loop). The ship sweeps left to right,
   // destroying each target block; destroyed blocks respawn later in the loop.
   const LOOP = 12;
-  const shots = targets.map((t, k) => ({
-    x: cellX(t.c) + CELL / 2,
-    cy: cellY(t.r) + CELL / 2,
-    hitY: cellY(t.r) + CELL,
-    color: BLOCKS[t.day.level],
-    fire: 12 + k * 22,
-  }));
+  const pointsFor = (count) => (count >= 50 ? 200 : count >= 20 ? 100 : count >= 10 ? 50 : count >= 5 ? 20 : 10);
+  const shots = targets.map((t, k) => {
+    const fire = 12 + k * 22;
+    return {
+      x: cellX(t.c) + CELL / 2,
+      cy: cellY(t.r) + CELL / 2,
+      color: BLOCKS[t.day.level],
+      points: pointsFor(t.day.count),
+      fire,
+      impact: fire + 3.5, // laser flight ≈ 420 ms; everything on a hit is keyed to this moment
+    };
+  });
   const homeX = gridX + gridW / 2;
   const cannonFrames = [`0%{transform:translateX(${n(homeX)}px)}`];
   shots.forEach((s) => {
@@ -344,9 +349,14 @@ function render(calendar, login) {
   const burst = (name, t, dx, dy) =>
     `@keyframes ${name}{0%,${pct(t.start - 0.01)}{opacity:0;transform:translate(0,0)}${pct(t.start)}{opacity:1;transform:translate(0,0)}` +
     `${pct(t.end)}{opacity:0;transform:translate(${n(dx)}px,${n(dy)}px)}100%{opacity:0;transform:translate(${n(dx)}px,${n(dy)}px)}}`;
+  // One-shot pop: hidden until `start`, peaks at `peak`, faded out by `end`.
+  const pop = (name, start, peak, end, s0, s1, s2, o1 = 1) =>
+    `@keyframes ${name}{0%,${pct(start - 0.01)}{opacity:0;transform:scale(${s0})}${pct(start)}{opacity:${o1};transform:scale(${s0})}` +
+    `${pct(peak)}{opacity:${o1};transform:scale(${s1})}${pct(end)}{opacity:0;transform:scale(${s2})}100%{opacity:0;transform:scale(${s2})}}`;
+  const FRAG_COLORS = ['#ffffff', '#41e2ff', '#8b5cf6', '#2f6bff', '#c9f7ff'];
   shots.forEach((s, k) => {
-    const dy = n(s.hitY - laserTop);
-    const t0 = s.fire, t1 = s.fire + 3.5; // fire → impact (≈420 ms of flight)
+    const dy = n(s.cy - laserTop); // beam tip stops at the block's centre
+    const t0 = s.fire, t1 = s.impact;
     const respawn = Math.min(t1 + 30, 97.5);
     shotCss.push(
       `.l${k}{animation:l${k} ${LOOP}s linear infinite}` +
@@ -356,38 +366,124 @@ function render(calendar, login) {
       `.w${k}{animation:w${k} ${LOOP}s ease-out infinite}` +
         `@keyframes w${k}{0%,${pct(t0 - 0.01)}{opacity:0;transform:translateY(0)}${pct(t0 + 0.2)}{opacity:.9;transform:translateY(0)}` +
         `${pct(t0 + 2.4)}{opacity:0;transform:translateY(${n(dy * 0.55)}px)}100%{opacity:0}}`,
-      // Block: white flash (120 ms), gone, then blinks back in.
+      // Block: white flash (120 ms), gone, then blinks back in with its original colour.
       `.wf${k}{animation:wf${k} ${LOOP}s steps(1,end) infinite}` +
         `@keyframes wf${k}{0%{opacity:0}${pct(t1)}{opacity:1}${pct(t1 + 1)}{opacity:0}}`,
       `.tg${k}{animation:tg${k} ${LOOP}s steps(1,end) infinite}` +
         `@keyframes tg${k}{0%{opacity:1}${pct(t1 + 1)}{opacity:0}${pct(respawn)}{opacity:1}${pct(respawn + 0.4)}{opacity:0}` +
         `${pct(respawn + 0.8)}{opacity:1}${pct(respawn + 1.2)}{opacity:0}${pct(respawn + 1.6)}{opacity:1}}`,
-      // Shockwave ring (≈360 ms).
-      `.sw${k}{animation:sw${k} ${LOOP}s ease-out infinite}` +
-        `@keyframes sw${k}{0%,${pct(t1 - 0.01)}{opacity:0;transform:scale(.1)}${pct(t1)}{opacity:.95;transform:scale(.15)}` +
-        `${pct(t1 + 3)}{opacity:0;transform:scale(1)}100%{opacity:0;transform:scale(1)}}`,
+      // Explosion core + pixel star (≈310 ms), local screen flash (≈190 ms).
+      `.co${k}{animation:co${k} ${LOOP}s ease-out infinite}` + pop(`co${k}`, t1, t1 + 1, t1 + 2.6, 0.3, 1.2, 1.5),
+      `.st${k}{animation:st${k} ${LOOP}s ease-out infinite}` + pop(`st${k}`, t1, t1 + 0.8, t1 + 2.2, 0.4, 1.15, 1.35),
+      `.sf${k}{animation:sf${k} ${LOOP}s ease-out infinite}` + pop(`sf${k}`, t1, t1 + 0.3, t1 + 1.6, 0.6, 1, 1.1, 0.55),
+      // Shockwaves: cyan ring (≈480 ms) and a trailing purple ring (≈500 ms).
+      `.sw${k}{animation:sw${k} ${LOOP}s ease-out infinite}` + pop(`sw${k}`, t1, t1 + 0.1, t1 + 4, 0.1, 0.15, 1, 0.95),
+      `.sv${k}{animation:sv${k} ${LOOP}s ease-out infinite}` + pop(`sv${k}`, t1 + 0.8, t1 + 0.9, t1 + 5, 0.1, 0.15, 1, 0.7),
+      // Score popup floats up and fades (≈650 ms).
+      `.pp${k}{animation:pp${k} ${LOOP}s ease-out infinite}` +
+        `@keyframes pp${k}{0%,${pct(t1 - 0.01)}{opacity:0;transform:translateY(0)}${pct(t1)}{opacity:1;transform:translateY(0)}` +
+        `${pct(t1 + 3.4)}{opacity:1;transform:translateY(-9px)}${pct(t1 + 5.4)}{opacity:0;transform:translateY(-14px)}100%{opacity:0;transform:translateY(-14px)}}`,
     );
+    const popup = text(`+${s.points}`, s.x, s.cy - 15, 1.2, 'middle').d;
     shotSvg.push(
       `<g class="laser l${k}"><rect class="beam" x="${n(s.x - 3)}" y="${n(laserTop - 2)}" width="6" height="${laserLen + 4}" rx="3"/>` +
         `<rect x="${n(s.x - 1.5)}" y="${n(laserTop)}" width="3" height="${laserLen}" rx="1.5" fill="#41e2ff"/>` +
         `<rect x="${n(s.x - 0.6)}" y="${n(laserTop + 1)}" width="1.2" height="${laserLen - 2}" fill="#ffffff"/></g>`,
       ...[-1, 1].map((side) => `<rect class="wbolt w${k}" x="${n(s.x + side * wingDx - 0.8)}" y="${n(shipY + 2)}" width="1.6" height="7" rx=".8"/>`),
-      `<circle class="fx sw sw${k}" cx="${n(s.x)}" cy="${n(s.cy)}" r="13"/>`,
+      `<circle class="fx pv sf${k}" cx="${n(s.x)}" cy="${n(s.cy)}" r="40" fill="url(#impact)"/>`,
+      `<circle class="fx sw sw${k}" cx="${n(s.x)}" cy="${n(s.cy)}" r="16"/>`,
+      `<circle class="fx sw sv sv${k}" cx="${n(s.x)}" cy="${n(s.cy)}" r="22"/>`,
+      `<circle class="fx pv co${k}" cx="${n(s.x)}" cy="${n(s.cy)}" r="9" fill="url(#blast)"/>`,
+      `<path class="fx pv st${k}" fill="#e8fdff" filter="url(#bloom)" d="${bitmapPath(STAR, s.x - 4.5 * 1.4, s.cy - 4.5 * 1.4, 1.4)}"/>`,
+      `<path class="fx pop pp${k}" d="${popup}"/>`,
     );
-    // Six glowing fragments scatter outward (≈420 ms), four sparks fly further and fade.
+    // Ten glowing fragments scatter outward (≈550 ms); eight sparks fly further and fade (≈590 ms).
     const light = mix(s.color, '#ffffff', 0.55);
-    for (let j = 0; j < 6; j++) {
-      const a = (j / 6) * Math.PI * 2 + 0.35 + k * 0.6;
-      const dist = 11 + (j % 3) * 2;
-      shotCss.push(`.fr${k}_${j}{animation:fr${k}_${j} ${LOOP}s cubic-bezier(.2,.7,.3,1) infinite}` + burst(`fr${k}_${j}`, { start: t1, end: t1 + 3.5 }, Math.cos(a) * dist, Math.sin(a) * dist));
-      shotSvg.push(`<rect class="fx fr${k}_${j}" x="${n(s.x - 1.2)}" y="${n(s.cy - 1.2)}" width="2.4" height="2.4" fill="${j % 2 ? '#e8fdff' : light}" filter="url(#bloom)"/>`);
+    for (let j = 0; j < 10; j++) {
+      const a = (j / 10) * Math.PI * 2 + 0.3 + k * 0.6;
+      const dist = 12 + ((j * 7) % 5) * 2.5;
+      const size = [2.6, 2, 1.6][j % 3];
+      const fill = j === 4 ? light : FRAG_COLORS[j % FRAG_COLORS.length];
+      shotCss.push(`.fr${k}_${j}{animation:fr${k}_${j} ${LOOP}s cubic-bezier(.2,.7,.3,1) infinite}` + burst(`fr${k}_${j}`, { start: t1, end: t1 + 4.6 }, Math.cos(a) * dist, Math.sin(a) * dist));
+      shotSvg.push(`<rect class="fx fr${k}_${j}" x="${n(s.x - size / 2)}" y="${n(s.cy - size / 2)}" width="${size}" height="${size}" fill="${fill}" filter="url(#bloom)"/>`);
     }
-    for (let j = 0; j < 4; j++) {
-      const a = (j / 4) * Math.PI * 2 + Math.PI / 4;
-      shotCss.push(`.sp${k}_${j}{animation:sp${k}_${j} ${LOOP}s ease-out infinite}` + burst(`sp${k}_${j}`, { start: t1 + 0.3, end: t1 + 3.2 }, Math.cos(a) * 18, Math.sin(a) * 18));
-      shotSvg.push(`<rect class="fx sp${k}_${j}" x="${n(s.x - 0.6)}" y="${n(s.cy - 0.6)}" width="1.2" height="1.2" fill="#fff6c9"/>`);
+    for (let j = 0; j < 8; j++) {
+      const a = (j / 8) * Math.PI * 2 + Math.PI / 8;
+      const dist = 22 + (j % 2) * 6;
+      shotCss.push(`.sp${k}_${j}{animation:sp${k}_${j} ${LOOP}s ease-out infinite}` + burst(`sp${k}_${j}`, { start: t1 + 0.3, end: t1 + 5.2 }, Math.cos(a) * dist, Math.sin(a) * dist));
+      shotSvg.push(`<rect class="fx sp${k}_${j}" x="${n(s.x - 0.6)}" y="${n(s.cy - 0.6)}" width="1.2" height="1.2" fill="${j % 2 ? '#41e2ff' : '#fff6c9'}"/>`);
     }
   });
+
+  // --- Scoreboard. A static SVG has no memory between page loads, so the score is a
+  // session score: one game is WAVES loops (4 hits each), counting up from 000000 at
+  // exactly each impact and resetting when the next game starts. HI-SCORE starts at
+  // 000000, rises whenever the score beats it, and holds its best across later games.
+  const WAVES = 3;
+  const GAME = LOOP * WAVES;
+  const ROLL = (0.45 / GAME) * 100; // digit roll ≈ 450 ms, in % of a game
+  const DIGITS = 6, dpx = 1.6, rowH = 16, digitW = 6 * dpx;
+  const hits = [];
+  let score = 0;
+  for (let w = 0; w < WAVES; w++) {
+    for (const s of shots) {
+      score += s.points;
+      hits.push({ at: ((w * LOOP + (s.impact / 100) * LOOP) / GAME) * 100, value: score });
+    }
+  }
+  const hiStart = 0;
+  const hiHits = hits.filter((h) => h.value > hiStart);
+
+  // Odometer: every digit is a 0-9-0-9 column that rolls to its next value.
+  const roller = (name, start, steps, iteration) => {
+    const css = [];
+    for (let p = 0; p < DIGITS; p++) {
+      const place = 10 ** (DIGITS - 1 - p);
+      const digit = (v) => Math.floor(v / place) % 10;
+      let prev = digit(start);
+      let frames = `0%{transform:translateY(${-prev * rowH}px)}`;
+      for (const { at, value } of steps) {
+        const d = digit(value);
+        if (d === prev) continue;
+        const row = d < prev ? d + 10 : d; // roll forward through the wrap, then snap back
+        frames += `${pct(at)}{transform:translateY(${-prev * rowH}px)}${pct(at + ROLL)}{transform:translateY(${-row * rowH}px)}`;
+        if (row !== d) frames += `${pct(at + ROLL + 0.01)}{transform:translateY(${-d * rowH}px)}`;
+        prev = d;
+      }
+      frames += `100%{transform:translateY(${-prev * rowH}px)}`;
+      css.push(
+        `.${name}${p}{transform:translateY(${-digit(start) * rowH}px);animation:${name}${p} ${GAME}s ease-out ${iteration}}@keyframes ${name}${p}{${frames}}`,
+      );
+    }
+    return css.join('\n');
+  };
+  // Brief glow / colour flash on every award.
+  const pulse = (name, steps, prop, rest, hot, iteration) => {
+    const frames = steps.map(({ at }) => `${pct(at - 0.01)}{${prop}:${rest}}${pct(at)}{${prop}:${hot}}${pct(at + 1.6)}{${prop}:${rest}}`).join('');
+    return `.${name}{animation:${name} ${GAME}s ease-out ${iteration}}@keyframes ${name}{0%{${prop}:${rest}}${frames}100%{${prop}:${rest}}}`;
+  };
+  const scoreCss = [
+    roller('sc', 0, hits, 'infinite'),
+    roller('hs', hiStart, hiHits, '1 forwards'),
+    pulse('sfill', hits, 'fill', '#f4f7ff', '#b4f6ff', 'infinite'),
+    pulse('sglow', hits, 'opacity', '0', '.32', 'infinite'),
+    pulse('hfill', hiHits, 'fill', '#f4f7ff', '#e2d6ff', '1 forwards'),
+    pulse('hglow', hiHits, 'opacity', '0', '.28', '1 forwards'),
+  ].join('\n');
+  const digitDefs =
+    [...Array(10).keys()].map((d) => `<path id="dg${d}" d="${text(String(d), 0, 0, dpx).d}"/>`).join('') +
+    `<g id="dcol">${[...Array(20).keys()].map((i) => `<use href="#dg${i % 10}" y="${i * rowH}"/>`).join('')}</g>`;
+  const counter = (id, cls, fillCls, glowCls, glowColor, cx) => {
+    const w = DIGITS * digitW - dpx, x0 = n(cx - w / 2), y = 34;
+    return (
+      `<clipPath id="${id}"><rect x="${n(x0 - 1)}" y="${y - 1}" width="${n(w + 2)}" height="${n(7 * dpx + 2)}"/></clipPath>` +
+      `<g class="art" filter="url(#soft)"><rect class="${glowCls}" x="${n(x0 - 3)}" y="${y - 3}" width="${n(w + 6)}" height="${n(7 * dpx + 6)}" rx="3" fill="${glowColor}" filter="url(#halo)" opacity="0"/>` +
+      `<g class="${fillCls}" fill="#f4f7ff" clip-path="url(#${id})">` +
+      [...Array(DIGITS).keys()].map((p) => `<use class="${cls}${p}" href="#dcol" x="${n(x0 + p * digitW)}" y="${y}"/>`).join('') +
+      `</g></g>`
+    );
+  };
+  const scoreSvg = counter('scoreWin', 'sc', 'sfill', 'sglow', '#41e2ff', hudCols[0]) + counter('hiWin', 'hs', 'hfill', 'hglow', '#8b5cf6', hudCols[1]);
 
   // --- Starfield: deterministic, kept out of the grid and label bands.
   const rand = mulberry32(hash(login || 'github'));
@@ -481,7 +577,11 @@ function render(calendar, login) {
 .wbolt{fill:#b48cff;filter:url(#bloom);opacity:0}
 .fx,.wf{opacity:0}
 .sw{fill:none;stroke:#41e2ff;stroke-width:1.4;vector-effect:non-scaling-stroke;filter:url(#bloom);transform-box:fill-box;transform-origin:center}
+.sv{stroke:#8b5cf6}
+.pv{transform-box:fill-box;transform-origin:center}
+.pop{fill:#e8fdff;stroke:#070a1f;stroke-width:2;paint-order:stroke;filter:url(#soft)}
 ${shotCss.join('\n')}
+${scoreCss}
 .roll{animation:roll 7s linear infinite}
 @keyframes roll{0%{transform:translateY(-60px)}100%{transform:translateY(${H + 60}px)}}
 .screen{animation:flicker 9s steps(1,end) infinite}
@@ -513,6 +613,13 @@ ${shotCss.join('\n')}
   <filter id="bloom" x="-50%" y="-50%" width="200%" height="200%">
     <feGaussianBlur stdDeviation="1.6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
   </filter>
+  <radialGradient id="blast">
+    <stop offset="0" stop-color="#ffffff"/><stop offset=".35" stop-color="#c9f7ff" stop-opacity=".95"/><stop offset=".7" stop-color="#41e2ff" stop-opacity=".55"/><stop offset="1" stop-color="#2f6bff" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="impact">
+    <stop offset="0" stop-color="#9ff3ff" stop-opacity=".6"/><stop offset=".45" stop-color="#41e2ff" stop-opacity=".18"/><stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/>
+  </radialGradient>
+  ${digitDefs}
   <radialGradient id="exhaust">
     <stop offset="0" stop-color="#41e2ff" stop-opacity=".55"/><stop offset=".5" stop-color="#2f6bff" stop-opacity=".18"/><stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/>
   </radialGradient>
@@ -529,6 +636,7 @@ ${shotCss.join('\n')}
   <g class="art">${starSvg}</g>
   <g class="art" fill="#5ef2ff" filter="url(#soft)"><path d="${hudLabels.join('')}"/></g>
   <g class="art" fill="#f4f7ff" filter="url(#soft)"><path d="${hudValues.join('')}"/></g>
+  ${scoreSvg}
   <g class="art" fill="#7d86b8"><path d="${monthLabels.join('')}${dayLabels.join('')}"/></g>
   <g class="glow art" filter="url(#halo)">${glow.join('')}</g>
   <g>${cells.join('')}</g>
