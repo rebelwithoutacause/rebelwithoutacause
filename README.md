@@ -24,7 +24,7 @@
 ---
 
 <table align="left"><tr><td align="center" valign="top" width="248">
-<p><b>QA &amp; Testing</b></p>
+<p><b>QA &amp; Testing Tools</b></p>
 <a href="https://www.selenium.dev/"><img src="assets/skills/tiles/selenium.svg" alt="Selenium" title="Selenium" width="58" height="70"></a>
 <a href="https://www.postman.com/"><img src="assets/skills/tiles/postman.svg" alt="Postman" title="Postman" width="58" height="70"></a>
 <a href="https://swagger.io/"><img src="assets/skills/tiles/swagger.svg" alt="Swagger" title="Swagger" width="58" height="70"></a>
@@ -46,13 +46,23 @@
 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS"><img src="assets/skills/tiles/css3.svg" alt="CSS3" title="CSS3" width="58" height="70"></a>
 </td></tr></table>
 <table align="left"><tr><td align="center" valign="top" width="248">
+<p><b>Cybersecurity Tools</b></p>
+<a href="https://nmap.org/"><img src="assets/skills/tiles/nmap.svg" alt="Nmap" title="Nmap" width="58" height="70"></a>
+<a href="https://hashcat.net/hashcat/#gh-light-mode-only"><img src="assets/skills/tiles/hashcat-light.svg" alt="Hashcat" title="Hashcat" width="58" height="70"></a><a href="https://hashcat.net/hashcat/#gh-dark-mode-only"><img src="assets/skills/tiles/hashcat-dark.svg" alt="Hashcat" title="Hashcat" width="58" height="70"></a>
+<a href="https://sqlmap.org/"><img src="assets/skills/tiles/sqlmap.svg" alt="SQLMap" title="SQLMap" width="58" height="70"></a>
+<a href="https://www.openwall.com/john/"><img src="assets/skills/tiles/john-the-ripper.svg" alt="John the Ripper" title="John the Ripper" width="58" height="70"></a><br>
+<a href="https://github.com/laramies/theHarvester"><img src="assets/skills/tiles/theharvester.svg" alt="theHarvester" title="theHarvester" width="58" height="70"></a>
+<a href="https://github.com/SpecterOps/BloodHound"><img src="assets/skills/tiles/bloodhound.svg" alt="BloodHound" title="BloodHound" width="58" height="70"></a>
+<a href="https://www.tenable.com/products/nessus"><img src="assets/skills/tiles/nessus.svg" alt="Nessus" title="Nessus" width="58" height="70"></a>
+</td></tr></table>
+<br clear="all">
+<table align="center"><tr><td align="center" valign="top" width="248">
 <p><b>Development &amp; DevOps Tools</b></p>
 <a href="https://git-scm.com/"><img src="assets/skills/tiles/git.svg" alt="Git" title="Git" width="58" height="70"></a>
 <a href="https://github.com/#gh-light-mode-only"><img src="assets/skills/tiles/github-light.svg" alt="GitHub" title="GitHub" width="58" height="70"></a><a href="https://github.com/#gh-dark-mode-only"><img src="assets/skills/tiles/github-dark.svg" alt="GitHub" title="GitHub" width="58" height="70"></a>
 <a href="https://www.docker.com/"><img src="assets/skills/tiles/docker.svg" alt="Docker" title="Docker" width="58" height="70"></a>
 <a href="https://github.com/features/actions"><img src="assets/skills/tiles/github-actions.svg" alt="GitHub Actions" title="GitHub Actions" width="58" height="70"></a>
 </td></tr></table>
-<br clear="all">
 <table align="left"><tr><td align="center" valign="top" width="248">
 <p><b>Databases</b></p>
 <a href="https://en.wikipedia.org/wiki/SQL"><img src="assets/skills/tiles/sql.svg" alt="SQL" title="SQL" width="58" height="70"></a>
@@ -67,24 +77,14 @@
 <a href="https://www.microsoft.com/windows"><img src="assets/skills/tiles/windows.svg" alt="Windows" title="Windows" width="58" height="70"></a>
 <a href="https://www.kernel.org/"><img src="assets/skills/tiles/linux.svg" alt="Linux" title="Linux" width="58" height="70"></a>
 </td></tr></table>
-<table align="left"><tr><td align="center" valign="top" width="248">
-<p><b>Cybersecurity Tools</b></p>
-<a href="https://nmap.org/"><img src="assets/skills/tiles/nmap.svg" alt="Nmap" title="Nmap" width="58" height="70"></a>
-<a href="https://hashcat.net/hashcat/#gh-light-mode-only"><img src="assets/skills/tiles/hashcat-light.svg" alt="Hashcat" title="Hashcat" width="58" height="70"></a><a href="https://hashcat.net/hashcat/#gh-dark-mode-only"><img src="assets/skills/tiles/hashcat-dark.svg" alt="Hashcat" title="Hashcat" width="58" height="70"></a>
-<a href="https://sqlmap.org/"><img src="assets/skills/tiles/sqlmap.svg" alt="SQLMap" title="SQLMap" width="58" height="70"></a>
-<a href="https://www.openwall.com/john/"><img src="assets/skills/tiles/john-the-ripper.svg" alt="John the Ripper" title="John the Ripper" width="58" height="70"></a><br>
-<a href="https://github.com/laramies/theHarvester"><img src="assets/skills/tiles/theharvester.svg" alt="theHarvester" title="theHarvester" width="58" height="70"></a>
-<a href="https://github.com/SpecterOps/BloodHound"><img src="assets/skills/tiles/bloodhound.svg" alt="BloodHound" title="BloodHound" width="58" height="70"></a>
-<a href="https://www.tenable.com/products/nessus"><img src="assets/skills/tiles/nessus.svg" alt="Nessus" title="Nessus" width="58" height="70"></a>
-</td></tr></table>
-<table align="left"><tr><td align="center" valign="top" width="248">
+<br clear="all">
+<table align="center"><tr><td align="center" valign="top" width="248">
 <p><b>AI Tools</b></p>
 <a href="https://www.anthropic.com/claude-code"><img src="assets/skills/tiles/claude.svg" alt="Claude Code" title="Claude Code" width="58" height="70"></a>
 <a href="https://lovable.dev/"><img src="assets/skills/tiles/lovable.svg" alt="Lovable" title="Lovable" width="58" height="70"></a>
 <a href="https://bolt.new"><img src="assets/skills/tiles/bolt.svg" alt="Bolt.new" title="Bolt.new" width="58" height="70"></a>
 <a href="https://suno.com/#gh-light-mode-only"><img src="assets/skills/tiles/suno-light.svg" alt="Suno.ai" title="Suno.ai" width="58" height="70"></a><a href="https://suno.com/#gh-dark-mode-only"><img src="assets/skills/tiles/suno-dark.svg" alt="Suno.ai" title="Suno.ai" width="58" height="70"></a>
 </td></tr></table>
-<br clear="all">
 
 ---
 
