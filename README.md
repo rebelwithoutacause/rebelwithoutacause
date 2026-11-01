@@ -12,7 +12,6 @@
 
 ---
 
-## 👋 About Me
 
 ### I'm a software developer and QA automation engineer. I hold certifications in **QA Automation Engineering** and **Cyber Security & Ethical Hacking**. I care about software quality, clean code, problem-solving and building reliable applications.
 
