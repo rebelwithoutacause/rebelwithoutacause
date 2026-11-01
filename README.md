@@ -1,12 +1,14 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=Hi%2C%20I%27m%20Tedd&fontSize=60&fontAlignY=35&animation=twinkling" alt="Hi, I'm Tedd" width="100%" />
+  <img src="assets/banner/terminal-banner.svg" alt="Retro terminal banner typing in turn: I'm Tedd, Software Developer, QA Automation Engineer, Cybersecurity Enthusiast, Apache JMeter Contributor" width="100%" />
 </p>
 
-# Hi, I'm Tedd 👋
+<h4 align="center">Software Developer · QA Automation Engineer · Cybersecurity Enthusiast · Apache JMeter Contributor</h4>
 
-### Software Developer · QA Automation Engineer · Cybersecurity Enthusiast · Apache JMeter Contributor
-
-![Profile views](https://komarev.com/ghpvc/?username=rebelwithoutacause&label=Profile%20views&color=0e75b6&style=flat) [![rebelwithoutacause on GitRanks: gitranks Pro](https://gitranks.com/badge/user/rebelwithoutacause/tier.svg)](https://gitranks.com/profile/rebelwithoutacause)
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=rebelwithoutacause&label=Profile%20views&color=0e75b6&style=flat" alt="Profile views" />
+  &nbsp;
+  <a href="https://gitranks.com/profile/rebelwithoutacause"><img src="https://gitranks.com/badge/user/rebelwithoutacause/tier.svg" alt="rebelwithoutacause on GitRanks: gitranks Pro" /></a>
+</p>
 
 ---
 
