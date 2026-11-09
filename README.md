@@ -117,25 +117,9 @@
 
 ### ☕ Enjoying my projects? Help fuel the next one! 🚀
 
-### Every contribution goes straight into learning, building new tools and giving back to open source.
+### Every coffee keeps my open-source work going and helps me build new tools.
 
-</div>
-
-<div align="center">
-
-### 🏦 IBAN
-
-<h1>
-
-```text
-[IBAN removed]
-```
-
-</h1>
-
-</div>
-
-<div align="center">
+[![Donate €1](https://img.shields.io/badge/%E2%82%AC1-Donate-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://www.paypal.com/paypalme/reb3lwithoutacause/1EUR) [![Donate €5](https://img.shields.io/badge/%E2%82%AC5-Donate-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://www.paypal.com/paypalme/reb3lwithoutacause/5EUR) [![Donate €10](https://img.shields.io/badge/%E2%82%AC10-Donate-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://www.paypal.com/paypalme/reb3lwithoutacause/10EUR) [![Donate €20](https://img.shields.io/badge/%E2%82%AC20-Donate-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://www.paypal.com/paypalme/reb3lwithoutacause/20EUR) [![Donate a custom amount](https://img.shields.io/badge/Custom%20Amount-Donate-0079C1?style=for-the-badge&logo=paypal&logoColor=white)](https://www.paypal.com/paypalme/reb3lwithoutacause)
 
 ### Thank you for being awesome! 🙌
 
