@@ -115,12 +115,8 @@
 
 # Support Me
 
-### ☕ Enjoying my projects? Help fuel the next one! 🚀
+### ☕ Enjoying my open-source work? Buy me a coffee.
 
-### Every coffee keeps my open-source work going and helps me build new tools.
-
-[![Donate €1](https://img.shields.io/badge/%E2%82%AC1-Donate-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://www.paypal.com/paypalme/reb3lwithoutacause/1EUR) [![Donate €5](https://img.shields.io/badge/%E2%82%AC5-Donate-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://www.paypal.com/paypalme/reb3lwithoutacause/5EUR) [![Donate €10](https://img.shields.io/badge/%E2%82%AC10-Donate-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://www.paypal.com/paypalme/reb3lwithoutacause/10EUR) [![Donate €20](https://img.shields.io/badge/%E2%82%AC20-Donate-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://www.paypal.com/paypalme/reb3lwithoutacause/20EUR) [![Donate a custom amount](https://img.shields.io/badge/Custom%20Amount-Donate-0079C1?style=for-the-badge&logo=paypal&logoColor=white)](https://www.paypal.com/paypalme/reb3lwithoutacause)
-
-### Thank you for being awesome! 🙌
+[![Donate with PayPal](https://img.shields.io/badge/Donate-PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://www.paypal.com/paypalme/reb3lwithoutacause)
 
 </div>
